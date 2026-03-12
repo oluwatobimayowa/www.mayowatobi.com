@@ -1,0 +1,23 @@
+From 923e371ee4615b8ef6d05d8508cb752418e3ecb0 Mon Sep 17 00:00:00 2001
+From: Oluwatobi Akindunjoye <mayowatobi2@gmail.com>
+Date: Wed, 11 Mar 2026 18:03:12 +0100
+Subject: [PATCH] Add Vercel configuration
+
+---
+ vercel.json | 4 ++++
+ 1 file changed, 4 insertions(+)
+ create mode 100644 vercel.json
+
+diff --git a/vercel.json b/vercel.json
+new file mode 100644
+index 0000000..20041ca
+--- /dev/null
++++ b/vercel.json
+@@ -0,0 +1,4 @@
++{
++  "cleanUrls": true,
++  "trailingSlash": false
++}
+-- 
+2.50.1 (Apple Git-155)
+
