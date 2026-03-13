@@ -1,0 +1,25 @@
+{
+  "name": "www.mayowatobi.com",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oluwatobimayowa/www.mayowatobi.com.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/oluwatobimayowa/www.mayowatobi.com/issues"
+  },
+  "homepage": "https://github.com/oluwatobimayowa/www.mayowatobi.com#readme",
+  "dependencies": {
+    "agentation": "^2.3.2",
+    "serve-handler": "^6.1.7"
+  }
+}
