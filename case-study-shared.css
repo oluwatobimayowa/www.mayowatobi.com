@@ -250,6 +250,20 @@
 }
 
 @media (max-width: 809px) {
+  .metric-row {
+    flex-direction: column;
+    overflow: visible;
+  }
+
+  .metric-card {
+    width: 100%;
+    flex: none;
+    min-height: 0;
+    padding: 20px;
+    gap: 20px;
+    justify-content: flex-start;
+  }
+
   .case-hero {
     padding: 40px 20px;
     gap: 32px;
@@ -292,5 +306,101 @@
   .statement-title {
     font-size: 36px;
     line-height: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  body.case-study-nav-ready {
+    padding-bottom: 112px;
+  }
+
+  body.case-study-nav-ready .w2-sidebar {
+    position: fixed !important;
+    left: 20px !important;
+    right: 20px !important;
+    bottom: 20px !important;
+    top: auto !important;
+    width: auto !important;
+    min-width: 0 !important;
+    z-index: 1001 !important;
+    padding: 12px !important;
+    border-radius: 20px !important;
+    background: rgba(17, 17, 17, 0.96) !important;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+  }
+
+  body.case-study-nav-ready .w2-sidebar .w2-sidebar-company {
+    display: none !important;
+  }
+
+  body.case-study-nav-ready .w2-sidebar .w2-sidebar-nav {
+    width: 100% !important;
+    padding: 0 !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+
+  body.case-study-nav-ready .w2-sidebar .w2-sidebar-nav .w2-sidebar-btn {
+    display: none !important;
+  }
+
+  body.case-study-nav-ready .w2-sidebar .w2-sidebar-nav .w2-sidebar-btn.active {
+    display: flex !important;
+    width: 100%;
+  }
+
+  body.case-study-nav-ready .w2-sidebar .w2-sidebar-btn.active .w2-sidebar-btn-subtitle {
+    display: block !important;
+  }
+
+  body.case-study-nav-ready .w2-sidebar .w2-sidebar-btn.active .w2-sidebar-btn-arrow {
+    transform: rotate(90deg);
+  }
+
+  body.case-study-nav-open {
+    overflow: hidden;
+  }
+
+  body.case-study-nav-open .w2-sidebar {
+    padding: 20px !important;
+    border-radius: 24px !important;
+  }
+
+  body.case-study-nav-open .w2-sidebar .w2-sidebar-company {
+    display: block !important;
+  }
+
+  body.case-study-nav-open .w2-sidebar .w2-sidebar-nav .w2-sidebar-btn {
+    display: flex !important;
+  }
+
+  body.case-study-nav-open .w2-sidebar .w2-sidebar-btn {
+    padding: 12px 14px !important;
+  }
+
+  body.case-study-nav-open .w2-sidebar .w2-sidebar-company + .w2-sidebar-nav + .w2-sidebar-company {
+    margin-top: 20px;
+  }
+
+  .case-study-nav-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.42);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 160ms ease;
+    z-index: 1000;
+  }
+
+  body.case-study-nav-open .case-study-nav-backdrop {
+    opacity: 1;
+    pointer-events: auto;
   }
 }
