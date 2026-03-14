@@ -2957,12 +2957,14 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
+      padding: 32px;
     }
 
     .ctl-card-image img {
       width: 320px;
       height: auto;
       object-fit: cover;
+      border-radius: 40px;
     }
 
     .ctl-card-labeled {
@@ -2980,13 +2982,14 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 24px;
+      padding: 32px;
     }
 
     .ctl-card-labeled-img img {
       width: 320px;
       height: auto;
       object-fit: cover;
+      border-radius: 40px;
     }
 
     .ctl-card-label {
@@ -3115,6 +3118,7 @@
       width: 320px;
       height: 339px;
       object-fit: cover;
+      border-radius: 40px;
     }
 
     .ctl-card-mixed-text {
@@ -3199,6 +3203,114 @@
       max-width: 600px;
       margin: 0 auto;
       line-height: 1.6;
+    }
+
+    /* ====== MOBILE RESPONSIVE ====== */
+    @media (max-width: 809px) {
+      .w2-sidebar {
+        width: 100%;
+        min-width: auto;
+        position: static;
+        flex-direction: row;
+        padding: 12px 0;
+        border-radius: 16px;
+      }
+      .w2-sidebar-company {
+        display: none;
+      }
+      .w2-sidebar-nav {
+        flex-direction: row;
+        width: 100%;
+        padding: 0 8px;
+      }
+      .w2-sidebar-nav .w2-sidebar-btn {
+        display: none;
+      }
+      .w2-sidebar-nav .w2-sidebar-btn.active {
+        display: flex;
+        width: 100%;
+      }
+      .w2-sidebar-btn.active .w2-sidebar-btn-subtitle {
+        display: block;
+      }
+      .w2-sidebar-btn.active .w2-sidebar-btn-arrow {
+        transform: rotate(90deg);
+      }
+
+      .ctl-page {
+        flex-direction: column;
+        gap: 32px;
+        padding: 20px;
+      }
+
+      .ctl-hero {
+        padding: 40px 20px;
+        height: auto;
+        min-height: 400px;
+        overflow: hidden;
+      }
+      .ctl-hero-title {
+        font-size: 46px;
+        line-height: 48px;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+      }
+
+      .ctl-card-row {
+        flex-direction: column;
+        gap: 16px;
+      }
+      .ctl-card,
+      .ctl-card-text,
+      .ctl-card-image,
+      .ctl-card-labeled,
+      .ctl-card-mixed {
+        width: 100%;
+        flex: none;
+        height: auto !important;
+        min-height: 0 !important;
+      }
+      .ctl-card-text {
+        padding: 32px 20px;
+      }
+      .ctl-card-image {
+        padding: 40px 20px;
+      }
+      .ctl-card-mixed {
+        padding: 40px 20px;
+      }
+
+      .ctl-statement {
+        padding: 64px 20px;
+        overflow: hidden;
+      }
+      .ctl-statement-title {
+        font-size: 46px;
+        line-height: 48px;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+      }
+      .ctl-statement-body {
+        max-width: 100%;
+        width: 100%;
+      }
+
+      .ctl-challenge {
+        flex-direction: column;
+        padding: 24px 20px;
+        overflow: hidden;
+      }
+      .ctl-challenge-title {
+        font-size: 46px;
+        line-height: 48px;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+      }
+
+      .ctl-page-footer p {
+        max-width: 100%;
+        width: 100%;
+      }
     }
   </style>
 

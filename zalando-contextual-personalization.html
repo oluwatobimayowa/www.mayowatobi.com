@@ -2686,6 +2686,37 @@
       display: none !important;
     }
 
+    /* ====== METRIC CARDS ====== */
+.w3-metric-row {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  overflow-y: clip;
+}
+.w3-metric-card {
+  flex: 1 0 0;
+  min-width: 0;
+  height: 480px;
+  background: #d5dad5;
+  border-radius: 16px;
+  padding: 56px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.w3-metric-value {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 40px;
+  color: #000501;
+}
+.w3-metric-desc {
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: -0.54px;
+  color: #000501;
+}
+
     /* ====== FONTS ====== */
     @font-face {
       font-family: 'Stabil Grotesk';
@@ -2912,13 +2943,13 @@
       justify-content: center;
       height: 720px;
       overflow: hidden;
+      padding: 32px;
     }
 
     .cp-card-video-inner {
       width: 320px;
-      border-radius: 16px;
+      border-radius: 32px;
       overflow: hidden;
-
     }
 
     .cp-card-video-inner video {
@@ -3081,18 +3112,14 @@
 
     .cp-concept-video img {
       width: 300px;
-      border-radius: 16.7px;
+      border-radius: 32px;
       box-shadow: 0 2.8px 22.2px rgba(0, 0, 0, 0.25);
     }
 
     .cp-concept-video video {
       max-width: 320px;
       height: auto;
-      border-radius: 16px;
-      border-top-left-radius: 16px;
-      border-top-right-radius: 16px;
-      border-bottom-right-radius: 16px;
-      border-bottom-left-radius: 16px;
+      border-radius: 32px;
       box-shadow: 0 23px 20px 0 rgba(0, 0, 0, 0.25);
       object-fit: contain;
       display: block;
@@ -3244,6 +3271,9 @@
     /* ====== FULL IMAGE SECTIONS ====== */
     .cp-image-section {
       width: 100%;
+      background: #FDF7F0;
+      border-radius: 16px;
+      padding: 40px;
     }
 
     .cp-image-section img {
@@ -3288,6 +3318,50 @@
     .cp-images-row .cp-image-section {
       flex: 1;
       min-width: 0;
+    }
+
+    /* ====== ACCESSIBILITY CARDS ====== */
+    .cp-a11y-row {
+      display: flex;
+      gap: 16px;
+    }
+    .cp-a11y-card {
+      background: #fff1ea;
+      border-radius: 16px;
+      padding: 24px 0;
+      height: 720px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .cp-a11y-card-narrow {
+      flex: 0 0 auto;
+      width: 320px;
+      align-items: flex-end;
+    }
+    .cp-a11y-card-wide {
+      flex: 1;
+      min-width: 0;
+      align-items: center;
+      justify-content: center;
+    }
+    .cp-a11y-label {
+      font-family: 'Stabil Grotesk', sans-serif;
+      font-size: 12px;
+      color: rgba(0, 5, 1, 0.6);
+      padding: 0 20px;
+      width: 100%;
+    }
+    .cp-a11y-card-narrow img {
+      width: 320px;
+      height: auto;
+      display: block;
+    }
+    .cp-a11y-card-wide img {
+      max-width: 736px;
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
     /* ====== METRICS ====== */
@@ -3345,6 +3419,213 @@
       color: #757375;
       font-size: 14px;
       text-align: center;
+    }
+
+    /* ====== MOBILE RESPONSIVE ====== */
+    @media (max-width: 809px) {
+      .w2-sidebar {
+        width: 100%;
+        min-width: auto;
+        position: static;
+        flex-direction: row;
+        padding: 12px 0;
+        border-radius: 16px;
+      }
+      .w2-sidebar-company {
+        display: none;
+      }
+      .w2-sidebar-nav {
+        flex-direction: row;
+        width: 100%;
+        padding: 0 8px;
+      }
+      .w2-sidebar-nav .w2-sidebar-btn {
+        display: none;
+      }
+      .w2-sidebar-nav .w2-sidebar-btn.active {
+        display: flex;
+        width: 100%;
+      }
+      .w2-sidebar-btn.active .w2-sidebar-btn-subtitle {
+        display: block;
+      }
+      .w2-sidebar-btn.active .w2-sidebar-btn-arrow {
+        transform: rotate(90deg);
+      }
+
+      .cp-page {
+        flex-direction: column;
+        gap: 32px;
+        padding: 20px;
+      }
+
+      .cp-hero {
+        padding: 40px 20px;
+        height: auto;
+        min-height: 400px;
+        overflow: hidden;
+      }
+      .cp-hero-title {
+        font-size: 46px;
+        line-height: 48px;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+      }
+
+      .cp-card-row {
+        flex-direction: column;
+      }
+      .cp-card-text {
+        height: auto !important;
+        min-height: 0 !important;
+        border-radius: 16px;
+        padding: 32px 20px;
+      }
+      .cp-card-video {
+        height: auto !important;
+        min-height: 0 !important;
+        border-radius: 16px;
+      }
+
+      .cp-statement {
+        padding: 64px 20px;
+        overflow: hidden;
+      }
+      .cp-statement-title {
+        font-size: 46px;
+        line-height: 48px;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+      }
+      .cp-statement-context {
+        max-width: 100%;
+      }
+
+      .cp-concept-section {
+        flex-direction: column;
+      }
+      .cp-concept-text {
+        border-radius: 16px;
+        height: auto !important;
+        min-height: 0 !important;
+        padding: 32px 20px;
+      }
+      .cp-concept-video {
+        border-radius: 16px;
+        height: auto !important;
+        min-height: 0 !important;
+        padding: 24px 20px;
+      }
+      .cp-concept-image {
+        border-radius: 16px;
+        height: auto !important;
+        min-height: 0 !important;
+      }
+      .cp-concept-title {
+        font-size: 40px;
+        line-height: 42px;
+      }
+
+      .cp-opportunity-section {
+        padding: 32px 20px;
+      }
+      .cp-opportunity-section {
+        overflow: hidden;
+      }
+      .cp-opportunity-title {
+        font-size: 46px;
+        line-height: 48px;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+      }
+      .cp-opportunity-cards {
+        flex-direction: column;
+      }
+      .cp-opp-card {
+        height: auto !important;
+        min-height: 0 !important;
+      }
+      .cp-opportunity-footer {
+        max-width: 100%;
+      }
+
+      .cp-accessibility-statement {
+        flex-direction: column;
+      }
+      .cp-accessibility-title {
+        font-size: 46px;
+        line-height: 48px;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+      }
+      .cp-accessibility-context {
+        max-width: 100%;
+      }
+
+      .cp-tabs-header {
+        flex-direction: column;
+      }
+      .cp-tab-label {
+        font-size: 14px;
+      }
+      .cp-tab-badge {
+        font-size: 12px;
+      }
+      .cp-tabs-images {
+        flex-direction: column;
+      }
+      .cp-tabs-images img {
+        max-height: none;
+        width: 100%;
+      }
+
+      .cp-images-row {
+        flex-direction: column;
+      }
+
+      .cp-a11y-row {
+        flex-direction: column;
+      }
+      .cp-a11y-card {
+        height: auto !important;
+        min-height: 0 !important;
+      }
+      .cp-a11y-card-narrow {
+        width: 100%;
+      }
+      .cp-a11y-card-narrow img {
+        width: 100%;
+      }
+
+      .cp-metric-row {
+        flex-direction: column;
+      }
+      .cp-metric-card {
+        height: auto;
+        min-height: auto;
+      }
+      .cp-metric-value {
+        font-size: 80px;
+      }
+
+      .cp-card-text-heading {
+        font-size: 36px;
+        line-height: 38px;
+      }
+
+      .cp-tabs-section {
+        border-radius: 16px;
+      }
+      .cp-tabs-body {
+        padding: 24px 20px;
+      }
+
+      .cp-disclaimer {
+        padding: 20px;
+      }
+      .cp-disclaimer-text {
+        font-size: 16px;
+      }
     }
   </style>
 
@@ -3494,7 +3775,7 @@
             </div>
             <div class="cp-concept-video">
               <video src="concept-test.mp4" autoplay loop muted playsinline
-                style="width:100%;height:auto;display:block;border-radius:inherit;"></video>
+                style="width:100%;height:auto;display:block;border-radius:32px;"></video>
             </div>
           </div>
 
@@ -3570,9 +3851,18 @@
             </div>
           </div>
 
+          <!-- DARK STATEMENT: Zooming out -->
+          <div class="cp-statement">
+            <span class="cp-statement-num">Systems thinking</span>
+            <div>
+              <div class="cp-statement-title">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Resolving ambiguity when customer intent spans multiple (sub)categories</div>
+            </div>
+          </div>
+
           <!-- FULL-WIDTH IMAGE: Annotated designs -->
           <div class="cp-image-section">
-            <img src="a9fb783b11b693b067b15a898145a434d5d4d00c.png" alt="Annotated design specifications">
+            <img src="continuity-model.svg" alt="Annotated design specifications">
           </div>
 
           <!-- MORE DESIGN IMAGES -->
@@ -3606,18 +3896,17 @@
             </div>
           </div>
 
-          <!-- METRIC CARDS -->
-          <div class="cp-metric-row">
-            <div class="cp-metric-card">
-              <div class="cp-metric-value">4x</div>
-              <div class="cp-metric-desc">Increase in session continuity engagement through personalized feed curation
-              </div>
-            </div>
-            <div class="cp-metric-card">
-              <div class="cp-metric-value">+22%</div>
-              <div class="cp-metric-desc">Improvement in new campaign discovery rate</div>
-            </div>
-          </div>
+           <!-- METRIC CARDS -->
+    <div class="w3-metric-row">
+      <div class="w3-metric-card">
+        <div class="w3-metric-value">€XX Million</div>
+        <div class="w3-metric-desc">GMV by evolving Plus into the cross-proposition Loyalty program</div>
+      </div>
+      <div class="w3-metric-card">
+        <div class="w3-metric-value">+17.8%</div>
+        <div class="w3-metric-desc">Registration rate</div>
+      </div>
+    </div>
 
           <!-- DISCLAIMER -->
           <div class="cp-disclaimer">

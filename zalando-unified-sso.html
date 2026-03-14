@@ -630,6 +630,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  padding: 32px;
 }
 .w2-card-light { background: #d5dad5; }
 .w2-card-dark { background: #dddfd4; }
@@ -639,7 +640,7 @@
 .w2-card-phone {
   width: 262px;
   height: 568px;
-  border-radius: 0;
+  border-radius: 40px;
   overflow: hidden;
 }
 .w2-card-phone img {
@@ -938,15 +939,48 @@
   .w2-challenge-inner { flex-direction: column; gap: 24px; }
   .w2-challenge-label { width: auto; padding-top: 0; }
   .w2-card-row { flex-direction: column; }
-  .w2-card { height: auto; min-height: 500px; }
+  .w2-card { height: auto; min-height: auto; }
   .w2-brand-row { flex-direction: column; height: auto; }
   .w2-tabs-video { height: 400px; }
 }
+@media (max-width: 809px) {
+  .w2-sidebar {
+    width: 100%;
+    min-width: auto;
+    position: static;
+    flex-direction: row;
+    padding: 12px 0;
+    border-radius: 16px;
+  }
+  .w2-sidebar-company { display: none; }
+  .w2-sidebar-nav {
+    flex-direction: row;
+    width: 100%;
+    padding: 0 8px;
+  }
+  .w2-sidebar-nav .w2-sidebar-btn { display: none; }
+  .w2-sidebar-nav .w2-sidebar-btn.active {
+    display: flex;
+    width: 100%;
+  }
+  .w2-sidebar-btn.active .w2-sidebar-btn-subtitle { display: block; }
+  .w2-sidebar-btn.active .w2-sidebar-btn-arrow { transform: rotate(90deg); }
+  .w2-page { padding: 20px; }
+  .w2-hero { padding: 40px 20px; height: auto !important; min-height: 0 !important; overflow: hidden; }
+  .w2-hero-title { font-size: 46px; line-height: 48px; overflow-wrap: break-word; word-wrap: break-word; }
+  .w2-statement { height: auto !important; min-height: 0 !important; padding: 64px 20px; overflow: hidden; }
+  .w2-statement-text { font-size: 46px; line-height: 48px; overflow-wrap: break-word; word-wrap: break-word; }
+  .w2-challenge { overflow: hidden; }
+  .w2-challenge-body { font-size: 46px; line-height: 48px; overflow-wrap: break-word; word-wrap: break-word; }
+  .w2-card { height: auto !important; min-height: 0 !important; }
+  .w2-card-phone { height: auto !important; }
+  .w2-card-text-left .w2-card-heading { font-size: 28px; line-height: 30px; overflow-wrap: break-word; }
+}
 @media (max-width: 600px) {
-  .w2-hero-title { font-size: 48px; line-height: 52px; }
+  .w2-hero-title { font-size: 36px; line-height: 40px; }
   .w2-statement-text { font-size: 36px; line-height: 40px; }
   .w2-challenge-body { font-size: 36px; line-height: 40px; }
-  .w2-card-text-left .w2-card-heading { font-size: 28px; line-height: 30px; }
+  .w2-card-text-left .w2-card-heading { font-size: 24px; line-height: 26px; }
 }
 </style>
 
@@ -1084,6 +1118,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 32px;
 }
 .w3-phone-stack {
   position: relative;
@@ -1093,7 +1128,7 @@
 .w3-phone-back {
   width: 100%;
   height: 100%;
-  border-radius: 16px;
+  border-radius: 40px;
   overflow: hidden;
 }
 .w3-phone-back img {
@@ -1109,6 +1144,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 32px;
 }
 .w3-purple-stack {
   position: relative;
@@ -1118,7 +1154,7 @@
 .w3-purple-inner {
   width: 100%;
   height: 100%;
-  border-radius: 16px;
+  border-radius: 40px;
   overflow: hidden;
   background: #4a0efd;
 }
@@ -1178,37 +1214,40 @@
   align-items: center;
   justify-content: center;
 }
-.w3-image-stack {
+.w3-image-row {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+.w3-image-phone-combo {
   position: relative;
-  display: inline-block;
-}
-.w3-image-stack .w3-img-back {
-  display: block;
-  max-width: 848px;
-  width: 100%;
-  margin-left: 134px;
-}
-.w3-image-phone-overlay {
-  position: absolute;
-  bottom: 0; left: 0;
   width: 425px;
   height: 872px;
+  flex-shrink: 0;
 }
-.w3-image-phone-overlay .w3-phone-screen {
+.w3-image-phone-combo .w3-phone-screenshot {
   position: absolute;
-  top: 0; left: 0;
+  top: 28px;
+  left: 25px;
   width: 375px;
   height: 817px;
-  border-radius: 16px;
+  border-radius: 60px;
   overflow: hidden;
-  z-index: 2;
-}
-.w3-image-phone-overlay .w3-phone-screen img {
-  width: 100%; height: 100%;
   object-fit: cover;
 }
-.w3-image-phone-overlay .w3-phone-frame-img {
-  display: none;
+.w3-image-phone-combo .w3-phone-frame-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 425px;
+  height: 872px;
+  pointer-events: none;
+}
+.w3-image-register {
+  height: 876px;
+  width: 514px;
+  flex-shrink: 0;
+  object-fit: cover;
 }
 
 /* ====== CHALLENGE ====== */
@@ -1288,6 +1327,193 @@
 }
 
 /* ====== DISCLAIMER ====== */
+/* ====== SYSTEMS THINKING SECTION ====== */
+.w3-systems {
+  background: #f0f4f0;
+  border-radius: 16px;
+  padding: 64px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.w3-systems-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #0e0e0e;
+  border-radius: 24px;
+  padding: 4px 16px;
+  font-size: 18px;
+  color: #0e0e0e;
+  width: fit-content;
+  line-height: normal;
+  margin-top: 24px;
+}
+.w3-systems-title {
+  font-size: 100.8px;
+  line-height: 100.8px;
+  letter-spacing: -1.008px;
+  color: #0e0e0e;
+}
+.w3-systems-body {
+  font-size: 16px;
+  line-height: 20px;
+  color: #0e0e0e;
+  max-width: 372px;
+}
+
+/* ====== GUIDING PRINCIPLE SECTION ====== */
+.w3-guiding {
+  background: #fdfaf5;
+  border-radius: 16px;
+  padding: 40px;
+  overflow-x: auto;
+}
+.w3-guiding-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #0e0e0e;
+  border-radius: 24px;
+  padding: 4px 12px;
+  font-size: 14px;
+  color: #0e0e0e;
+  width: fit-content;
+  line-height: normal;
+}
+.w3-guiding-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #0e0e0e;
+  max-width: 637px;
+  margin-top: 10px;
+  margin-bottom: 24px;
+}
+.w3-guiding-table {
+  width: 100%;
+  min-width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.w3-guiding-row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.w3-guiding-cell {
+  flex: 1;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff1ea;
+  border: 0.5px solid rgba(20, 21, 23, 0.4);
+  border-radius: 8px;
+  font-size: 12px;
+  color: #141517;
+  text-align: center;
+  padding: 8px 16px;
+}
+.w3-guiding-cell-header {
+  height: 64px;
+  background: #fff1ea;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0e0e0e;
+  gap: 4px;
+}
+.w3-guiding-cell-header img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.w3-guiding-cell-decision {
+  flex: 0 0 400px;
+  background: #eaf3de;
+  border-color: #27500a;
+  font-size: 14px;
+  font-weight: 500;
+  color: #27500a;
+  padding: 8px 32px;
+}
+.w3-guiding-cell-decision-header {
+  flex: 0 0 400px;
+  background: #fff1ea;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+.w3-guiding-arrow {
+  flex: 0 0 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0e0e0e;
+  font-size: 14px;
+}
+
+/* IMPACT SECTION */
+.w3-impact {
+  background: #191719;
+  border-radius: 16px;
+  padding: 64px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.w3-impact-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 16px;
+  border: 1px solid #d5dad5;
+  border-radius: 24px;
+  font-family: 'Stabil Grotesk', sans-serif;
+  font-size: 18px;
+  color: #d5dad5;
+  align-self: flex-start;
+}
+.w3-impact-title {
+  font-family: 'Stabil Grotesk', sans-serif;
+  font-size: 100.8px;
+  line-height: 100.8px;
+  letter-spacing: -1.008px;
+  color: #fff1ea;
+}
+.w3-impact-browser {
+  display: flex;
+  flex-direction: column;
+  border-radius: 17px;
+  overflow: hidden;
+  max-width: 1011px;
+}
+.w3-impact-toolbar {
+  width: 100%;
+  display: block;
+}
+.w3-impact-slideshow {
+  position: relative;
+  width: 100%;
+}
+.w3-impact-slide {
+  width: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.w3-impact-slide:first-child {
+  position: relative;
+}
+.w3-impact-slide.active {
+  opacity: 1;
+}
+
 .w3-disclaimer {
   background: #191719;
   border-radius: 16px;
@@ -1332,17 +1558,89 @@
   .w3-challenge-inner { flex-direction: column; gap: 24px; }
   .w3-challenge-label { width: auto; padding-top: 0; }
   .w3-card-row { flex-direction: column; }
-  .w3-card { height: auto; min-height: 500px; }
+  .w3-card { height: auto !important; min-height: 0 !important; }
   .w3-metric-row { flex-direction: column; }
-  .w3-metric-card { height: auto; min-height: 300px; }
-  .w3-image-stack .w3-img-back { margin-left: 0; max-width: 100%; }
+  .w3-metric-card { height: auto !important; min-height: 0 !important; }
+  .w3-image-row { flex-direction: column; gap: 24px; }
+  .w3-image-phone-combo { width: 280px; height: auto; aspect-ratio: 425/872; }
+  .w3-image-phone-combo .w3-phone-screenshot { top: 6.6%; left: 5.9%; width: 88.2%; height: 93.7%; }
+  .w3-image-phone-combo .w3-phone-frame-overlay { width: 100%; height: 100%; }
+  .w3-image-register { width: 100%; height: auto; }
   .w3-image-phone-overlay { display: none; }
+  .w3-systems-title { font-size: 52px; line-height: 56px; }
+  .w3-systems { padding: 40px 24px; }
+  .w3-guiding { padding: 24px; }
+  .w3-impact { padding: 40px 24px; }
+  .w3-impact-title { font-size: 52px; line-height: 56px; }
+  .w3-guiding-cell-decision, .w3-guiding-cell-decision-header { flex: 0 0 280px; }
+}
+@media (max-width: 809px) {
+  .w2-sidebar {
+    width: 100%;
+    min-width: auto;
+    position: static;
+    flex-direction: row;
+    padding: 12px 0;
+    border-radius: 16px;
+  }
+  .w2-sidebar-company { display: none; }
+  .w2-sidebar-nav {
+    flex-direction: row;
+    width: 100%;
+    padding: 0 8px;
+  }
+  .w2-sidebar-nav .w2-sidebar-btn { display: none; }
+  .w2-sidebar-nav .w2-sidebar-btn.active {
+    display: flex;
+    width: 100%;
+  }
+  .w2-sidebar-btn.active .w2-sidebar-btn-subtitle { display: block; }
+  .w2-sidebar-btn.active .w2-sidebar-btn-arrow { transform: rotate(90deg); }
+
+  .w3-page {
+    flex-direction: column;
+    gap: 32px;
+    padding: 20px;
+  }
+  .w3-hero { padding: 40px 20px; height: auto !important; min-height: 0 !important; overflow: hidden; }
+  .w3-hero-title { font-size: 46px; line-height: 48px; overflow-wrap: break-word; word-wrap: break-word; }
+  .w3-hmw { padding: 64px 20px; height: auto !important; min-height: 0 !important; overflow: hidden; }
+  .w3-hmw-title { font-size: 46px; line-height: 48px; overflow-wrap: break-word; word-wrap: break-word; }
+  .w3-hmw-body { max-width: 100%; }
+  .w3-challenge { padding: 24px 20px; overflow: hidden; }
+  .w3-challenge-body { font-size: 46px; line-height: 48px; min-height: 0 !important; overflow-wrap: break-word; word-wrap: break-word; }
+  .w3-challenge-inner { flex-direction: column; gap: 24px; }
+  .w3-challenge-label { width: auto; padding-top: 0; }
+  .w3-card-row { flex-direction: column; }
+  .w3-card { height: auto !important; min-height: 0 !important; }
+  .w3-card-text { padding: 32px 20px; }
+  .w3-phone-stack { width: 280px; height: auto; }
+  .w3-phone-back { width: 100%; height: auto; aspect-ratio: 9/19; }
+  .w3-purple-stack { width: 280px; height: auto; }
+  .w3-purple-inner { width: 100%; height: auto; aspect-ratio: 9/19; }
+  .w3-metric-row { flex-direction: column; }
+  .w3-metric-card { height: auto !important; min-height: 0 !important; }
+  .w3-metric-value { font-size: 80px; }
+  .w3-image-row { flex-direction: column; gap: 24px; }
+  .w3-image-phone-combo { width: 280px; height: auto; aspect-ratio: 425/872; }
+  .w3-image-phone-combo .w3-phone-screenshot { top: 6.6%; left: 5.9%; width: 88.2%; height: 93.7%; }
+  .w3-image-phone-combo .w3-phone-frame-overlay { width: 100%; height: 100%; }
+  .w3-image-register { width: 100%; height: auto; }
+  .w3-systems { padding: 40px 20px; overflow: hidden; }
+  .w3-systems-title { font-size: 46px; line-height: 48px; overflow-wrap: break-word; word-wrap: break-word; }
+  .w3-systems-body { max-width: 100%; }
+  .w3-impact { padding: 40px 20px; overflow: hidden; }
+  .w3-impact-title { font-size: 46px; line-height: 48px; overflow-wrap: break-word; word-wrap: break-word; }
+  .w3-guiding { padding: 20px; }
+  .w3-guiding-cell-decision, .w3-guiding-cell-decision-header { flex: 0 0 220px; }
 }
 @media (max-width: 600px) {
   .w3-hero-title { font-size: 36px; line-height: 40px; }
   .w3-hmw-title { font-size: 36px; line-height: 40px; }
   .w3-challenge-body { font-size: 36px; line-height: 40px; }
   .w3-card-text .w3-card-heading { font-size: 28px; line-height: 30px; }
+  .w3-systems-title { font-size: 36px; line-height: 40px; }
+  .w3-impact-title { font-size: 36px; line-height: 40px; }
 }
 </style>
 
@@ -1441,36 +1739,41 @@
 
     <!-- HMW STATEMENT -->
     <div class="w3-hmw">
-      <span class="w3-hmw-num">01</span>
+      <span class="w3-hmw-num">Challenge</span>
       <div class="w3-hmw-body">
-        <div class="w3-hmw-context">Zalando and Lounge, both under the same group, had separate authentication systems. This created friction for cross-proposition users switching platforms or using social logins, while hindering access to shared services like Zalando Plus.</div>
-        <div class="w3-hmw-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HMW merge while respecting their unique business &amp; user needs?</div>
+        <div class="w3-hmw-context">Zalando and Lounge shared a parent but had evolved independently for years. Every design decision required resolving a real business tension, not just pattern-matching to a standard SSO.</div>
+        <div class="w3-hmw-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HMW reconcile two different proposition ecosystems</div>
+      </div>
+    </div>
+
+        <!-- GUIDING PRINCIPLE -->
+    <div class="w3-guiding">
+      <img src="sso_reconciliation_decisions.svg" alt="Reconciliation design decisions" style="width:100%;">
+    </div>
+
+      <!-- IMPACT -->
+    <div class="w3-impact">
+      <div class="w3-impact-badge">Impact</div>
+      <div class="w3-impact-title">50M customers, 25 markets, 2 propositions, 1 account</div>
+      <div class="w3-impact-browser">
+        <img class="w3-impact-toolbar" src="sso-toolbar.svg" alt="Browser toolbar">
+        <div class="w3-impact-slideshow">
+          <img class="w3-impact-slide active" src="sso-english.png" alt="SSO English">
+          <img class="w3-impact-slide" src="sso-deutsch.png" alt="SSO Deutsch">
+          <img class="w3-impact-slide" src="sso-italy.png" alt="SSO Italian">
+          <img class="w3-impact-slide" src="sso-spanish.png" alt="SSO Spanish">
+        </div>
       </div>
     </div>
 
     <!-- FULL-WIDTH IMAGE SECTION -->
     <div class="w3-image-section">
-      <div class="w3-image-stack">
-        <img class="w3-img-back" src="83de81be59a4f8b255685d5d74e8183460f2e5ef.png" alt="Figma annotation">
-        <div class="w3-image-phone-overlay">
-          <div class="w3-phone-screen">
-            <img src="7b808eefbaba74c56350713d3dbbca8f64cd95a8.png" alt="Zalando login screenshot">
-          </div>
-          <div class="w3-phone-frame-img">
-            <img src="494ae7938f3fa7f7b806caad0e878f1b0dc4bbe8.png" alt="Phone frame">
-          </div>
+      <div class="w3-image-row">
+        <div class="w3-image-phone-combo">
+          <img class="w3-phone-screenshot" src="sso-phone-zalando.png" alt="Zalando app screenshot">
+          <img class="w3-phone-frame-overlay" src="sso-phone-frame.png" alt="Phone frame">
         </div>
-      </div>
-    </div>
-
-    <!-- CHALLENGE -->
-    <div class="w3-challenge">
-      <div class="w3-challenge-inner">
-        <div class="w3-challenge-label">
-          <div class="w3-challenge-label-num">02</div>
-          <div class="w3-challenge-label-text">Challenge</div>
-        </div>
-        <div class="w3-challenge-body">Some more stuff to come .....</div>
+        <img class="w3-image-register" src="sso-register-screen.png" alt="Zalando registration screen">
       </div>
     </div>
 
@@ -1486,6 +1789,7 @@
       </div>
     </div>
 
+
     <!-- DISCLAIMER -->
     <div class="w3-disclaimer">
       <div class="w3-disclaimer-text">Detailed case study available on request.</div>
@@ -1499,5 +1803,16 @@
   <p>The works here have been abstracted to protect confidential information. If you need to see the full, detailed version, please contact me at work@mayowatobi.com</p>
 </div>
 
+<script>
+(function() {
+  var slides = document.querySelectorAll('.w3-impact-slide');
+  var current = 0;
+  setInterval(function() {
+    slides[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+  }, 3000);
+})();
+</script>
 </body>
 </html>
