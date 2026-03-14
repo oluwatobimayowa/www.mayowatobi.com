@@ -431,7 +431,7 @@
     
     <!-- End of headEnd -->
 
-
+<link rel="stylesheet" href="case-study-shared.css">
 <style>
 /* Hide Framer page content but keep the nav */
 .framer-td5bzc, .framer-1p94wo4, .framer-v3907a-container { display: none !important; }
@@ -612,13 +612,6 @@
   line-height: 160px;
 }
 
-/* ====== CARD ROW ====== */
-.w2-card-row {
-  display: flex;
-  gap: 16px;
-  overflow-x: auto;
-  overflow-y: clip;
-}
 .w2-card {
   flex: 1 0 0;
   min-width: 0;
@@ -669,34 +662,6 @@
   letter-spacing: -1.19px;
   line-height: 44px;
   color: #000501;
-}
-
-/* ====== DARK GREEN STATEMENT ====== */
-.w2-statement {
-  background: #191719;
-  border-radius: 16px;
-  padding: 64px 48px;
-  height: 600px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.w2-statement-num {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #d5dad5;
-  border-radius: 26px;
-  padding: 4px 16px;
-  width: fit-content;
-  font-size: 18px;
-  color: #d5dad5;
-}
-.w2-statement-text {
-  font-size: 100px;
-  line-height: 100px;
-  letter-spacing: -1.01px;
-  color: #d5dad5;
 }
 
 /* ====== LIGHT SECTION (video/image card) ====== */
@@ -933,12 +898,10 @@
   .w2-hero-title { font-size: 80px; line-height: 80px; }
   .w2-hero-counter { font-size: 48px; line-height: 52px; }
   .w2-hero { height: auto; min-height: 400px; }
-  .w2-statement { height: auto; min-height: 400px; }
-  .w2-statement-text { font-size: 52px; line-height: 56px; }
   .w2-challenge-body { font-size: 52px; line-height: 56px; min-height: auto; }
   .w2-challenge-inner { flex-direction: column; gap: 24px; }
   .w2-challenge-label { width: auto; padding-top: 0; }
-  .w2-card-row { flex-direction: column; }
+  .card-row { flex-direction: column; }
   .w2-card { height: auto; min-height: auto; }
   .w2-brand-row { flex-direction: column; height: auto; }
   .w2-tabs-video { height: 400px; }
@@ -968,8 +931,6 @@
   .w2-page { padding: 20px; }
   .w2-hero { padding: 40px 20px; height: auto !important; min-height: 0 !important; overflow: hidden; }
   .w2-hero-title { font-size: 46px; line-height: 48px; overflow-wrap: break-word; word-wrap: break-word; }
-  .w2-statement { height: auto !important; min-height: 0 !important; padding: 64px 20px; overflow: hidden; }
-  .w2-statement-text { font-size: 46px; line-height: 48px; overflow-wrap: break-word; word-wrap: break-word; }
   .w2-challenge { overflow: hidden; }
   .w2-challenge-body { font-size: 46px; line-height: 48px; overflow-wrap: break-word; word-wrap: break-word; }
   .w2-card { height: auto !important; min-height: 0 !important; }
@@ -978,7 +939,6 @@
 }
 @media (max-width: 600px) {
   .w2-hero-title { font-size: 36px; line-height: 40px; }
-  .w2-statement-text { font-size: 36px; line-height: 40px; }
   .w2-challenge-body { font-size: 36px; line-height: 40px; }
   .w2-card-text-left .w2-card-heading { font-size: 24px; line-height: 26px; }
 }
@@ -1046,41 +1006,6 @@
   gap: 16px;
 }
 
-/* ====== HERO ====== */
-.w3-hero {
-  background: #ff4c00;
-  border-radius: 16px;
-  padding: 64px 48px;
-  height: 600px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.w3-hero-num {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #d5dad5;
-  border-radius: 24px;
-  padding: 4px 16px;
-  width: fit-content;
-  font-size: 18px;
-  color: #d5dad5;
-}
-.w3-hero-title {
-  font-size: 100px;
-  line-height: 100px;
-  letter-spacing: -1.01px;
-  color: #fff;
-}
-
-/* ====== 3-CARD ROW ====== */
-.w3-card-row {
-  display: flex;
-  gap: 16px;
-  overflow-x: auto;
-  overflow-y: clip;
-}
 .w3-card {
   flex: 1 0 0;
   min-width: 0;
@@ -1091,26 +1016,16 @@
 }
 .w3-card-warm { background: #fff1ea; }
 
-/* Text card */
-.w3-card-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 40px 32px;
-}
 .w3-card-text .w3-card-heading {
   font-weight: 500;
   font-size: 46px;
   line-height: 48px;
-  color: #000501;
 }
-.w3-card-heading-muted { color: rgba(0,5,1,0.6); }
 .w3-card-rating {
   font-weight: 500;
   font-size: 39px;
   letter-spacing: -1.19px;
   line-height: 44px;
-  color: #000501;
 }
 
 /* Phone card */
@@ -1164,45 +1079,6 @@
 }
 .w3-purple-frame {
   display: none;
-}
-
-/* ====== HMW STATEMENT ====== */
-.w3-hmw {
-  background: #191719;
-  border-radius: 16px;
-  padding: 64px 48px;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-.w3-hmw-num {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #d5dad5;
-  border-radius: 24px;
-  padding: 4px 16px;
-  width: fit-content;
-  font-size: 18px;
-  color: #d5dad5;
-}
-.w3-hmw-body {
-  position: relative;
-  padding-bottom: 112px;
-  color: #fff1ea;
-}
-.w3-hmw-context {
-  font-size: 16px;
-  line-height: 20px;
-  max-width: 372px;
-  position: relative;
-  z-index: 1;
-}
-.w3-hmw-title {
-  font-size: 100px;
-  line-height: 100px;
-  letter-spacing: -1.01px;
-  margin-top: -112px;
 }
 
 /* ====== FULL-WIDTH IMAGE ====== */
@@ -1293,37 +1169,6 @@
   min-height: 404px;
   display: flex;
   align-items: center;
-}
-
-/* ====== METRIC CARDS ====== */
-.w3-metric-row {
-  display: flex;
-  gap: 16px;
-  overflow-x: auto;
-  overflow-y: clip;
-}
-.w3-metric-card {
-  flex: 1 0 0;
-  min-width: 0;
-  height: 480px;
-  background: #d5dad5;
-  border-radius: 16px;
-  padding: 56px 48px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.w3-metric-value {
-  font-weight: 500;
-  font-size: 40px;
-  line-height: 40px;
-  color: #000501;
-}
-.w3-metric-desc {
-  font-size: 18px;
-  line-height: 21px;
-  letter-spacing: -0.54px;
-  color: #000501;
 }
 
 /* ====== DISCLAIMER ====== */
@@ -1546,19 +1391,6 @@
   text-align: center;
 }
 
-/* ====== FOOTER ====== */
-.w3-page-footer {
-  padding: 24px 32px 72px;
-}
-.w3-page-footer p {
-  font-family: 'Roobert', 'Stabil Grotesk', sans-serif;
-  font-weight: 500;
-  font-size: 18px;
-  color: rgba(255,255,255,0.4);
-  letter-spacing: -0.6px;
-  max-width: 860px;
-}
-
 /* ====== RESPONSIVE ====== */
 @media (max-width: 1100px) {
   .w3-page {
@@ -1567,16 +1399,13 @@
     gap: 20px;
   }
   .w2-sidebar { width: 100%; min-width: unset; position: static; }
-  .w3-hero-title { font-size: 52px; line-height: 56px; }
-  .w3-hero { height: auto; min-height: 400px; }
-  .w3-hmw-title { font-size: 52px; line-height: 56px; }
   .w3-challenge-body { font-size: 52px; line-height: 56px; min-height: auto; }
   .w3-challenge-inner { flex-direction: column; gap: 24px; }
   .w3-challenge-label { width: auto; padding-top: 0; }
-  .w3-card-row { flex-direction: column; }
+  .card-row { flex-direction: column; }
   .w3-card { height: auto !important; min-height: 0 !important; }
-  .w3-metric-row { flex-direction: column; }
-  .w3-metric-card { height: auto !important; min-height: 0 !important; }
+  .metric-row { flex-direction: column; }
+  .metric-card { height: auto !important; min-height: 0 !important; }
   .w3-image-row { flex-direction: column; gap: 24px; }
   .w3-image-phone-combo { width: 280px; height: auto; aspect-ratio: 425/872; }
   .w3-image-phone-combo .w3-phone-screenshot { top: 6.6%; left: 5.9%; width: 88.2%; height: 93.7%; }
@@ -1618,25 +1447,19 @@
     gap: 32px;
     padding: 20px;
   }
-  .w3-hero { padding: 40px 20px; height: auto !important; min-height: 0 !important; overflow: hidden; }
-  .w3-hero-title { font-size: 46px; line-height: 48px; overflow-wrap: break-word; word-wrap: break-word; }
-  .w3-hmw { padding: 64px 20px; height: auto !important; min-height: 0 !important; overflow: hidden; }
-  .w3-hmw-title { font-size: 46px; line-height: 48px; overflow-wrap: break-word; word-wrap: break-word; }
-  .w3-hmw-body { max-width: 100%; }
   .w3-challenge { padding: 24px 20px; overflow: hidden; }
   .w3-challenge-body { font-size: 46px; line-height: 48px; min-height: 0 !important; overflow-wrap: break-word; word-wrap: break-word; }
   .w3-challenge-inner { flex-direction: column; gap: 24px; }
   .w3-challenge-label { width: auto; padding-top: 0; }
-  .w3-card-row { flex-direction: column; }
+  .card-row { flex-direction: column; }
   .w3-card { height: auto !important; min-height: 0 !important; }
-  .w3-card-text { padding: 32px 20px; }
   .w3-phone-stack { width: 280px; height: auto; }
   .w3-phone-back { width: 100%; height: auto; aspect-ratio: 9/19; }
   .w3-purple-stack { width: 280px; height: auto; }
   .w3-purple-inner { width: 100%; height: auto; aspect-ratio: 9/19; }
-  .w3-metric-row { flex-direction: column; }
-  .w3-metric-card { height: auto !important; min-height: 0 !important; }
-  .w3-metric-value { font-size: 80px; }
+  .metric-row { flex-direction: column; }
+  .metric-card { height: auto !important; min-height: 0 !important; }
+  .metric-value { font-size: 80px; }
   .w3-image-row { flex-direction: column; gap: 24px; }
   .w3-image-phone-combo { width: 280px; height: auto; aspect-ratio: 425/872; }
   .w3-image-phone-combo .w3-phone-screenshot { top: 6.6%; left: 5.9%; width: 88.2%; height: 93.7%; }
@@ -1651,8 +1474,6 @@
   .w3-guiding-cell-decision, .w3-guiding-cell-decision-header { flex: 0 0 220px; }
 }
 @media (max-width: 600px) {
-  .w3-hero-title { font-size: 36px; line-height: 40px; }
-  .w3-hmw-title { font-size: 36px; line-height: 40px; }
   .w3-challenge-body { font-size: 36px; line-height: 40px; }
   .w3-card-text .w3-card-heading { font-size: 28px; line-height: 30px; }
   .w3-systems-title { font-size: 36px; line-height: 40px; }
@@ -1713,15 +1534,15 @@
   <div class="w3-main">
 
     <!-- HERO -->
-    <div class="w3-hero">
-      <span class="w3-hero-num">01</span>
-      <div class="w3-hero-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unifying SSO across propositions serving 50M+ customers</div>
+    <div class="case-hero">
+      <span class="case-hero-num">01</span>
+      <div class="case-hero-title case-hero-title-offset">Unifying SSO across propositions serving 50M+ customers</div>
     </div>
 
     <!-- 3-CARD ROW -->
-    <div class="w3-card-row">
+    <div class="card-row">
       <!-- Card 1: Text -->
-      <div class="w3-card w3-card-warm w3-card-text">
+      <div class="w3-card-text w3-card-text--ink">
         <div>
           <div class="w3-card-heading">Reducing friction, boosting security, and increasing registration <span class="w3-card-heading-muted">by 17.8%</span></div>
         </div>
@@ -1754,11 +1575,11 @@
     </div>
 
     <!-- HMW STATEMENT -->
-    <div class="w3-hmw">
-      <span class="w3-hmw-num">Challenge</span>
-      <div class="w3-hmw-body">
-        <div class="w3-hmw-context">Zalando and Lounge shared a parent but had evolved independently for years. Every design decision required resolving a real business tension, not just pattern-matching to a standard SSO.</div>
-        <div class="w3-hmw-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HMW reconcile two different proposition ecosystems</div>
+    <div class="statement statement--cream">
+      <span class="statement-num">Challenge</span>
+      <div class="statement-copy">
+        <div class="statement-title statement-title-offset">HMW reconcile two different proposition ecosystems</div>
+        <div class="statement-context statement-context--spaced">Zalando and Lounge shared a parent but had evolved independently for years. Every design decision required resolving a real business tension, not just pattern-matching to a standard SSO.</div>
       </div>
     </div>
 
@@ -1801,14 +1622,14 @@
     </div>
 
     <!-- METRIC CARDS -->
-    <div class="w3-metric-row">
-      <div class="w3-metric-card">
-        <div class="w3-metric-value">€XX Million</div>
-        <div class="w3-metric-desc">GMV by evolving Plus into the cross-proposition Loyalty program</div>
+    <div class="metric-row">
+      <div class="metric-card">
+        <div class="metric-value">€XX Million</div>
+        <div class="metric-desc">GMV by evolving Plus into the cross-proposition Loyalty program</div>
       </div>
-      <div class="w3-metric-card">
-        <div class="w3-metric-value">+17.8%</div>
-        <div class="w3-metric-desc">Registration rate</div>
+      <div class="metric-card">
+        <div class="metric-value">+17.8%</div>
+        <div class="metric-desc">Registration rate</div>
       </div>
     </div>
 
@@ -1822,7 +1643,7 @@
 </div>
 
 <!-- FOOTER -->
-<div class="w3-page-footer">
+<div class="portfolio-abstraction-info">
   <p>The works here have been abstracted to protect confidential information. If you need to see the full, detailed version, please contact me at work@mayowatobi.com</p>
 </div>
 

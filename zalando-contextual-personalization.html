@@ -45,6 +45,7 @@
   <meta name="twitter:description"
     content="An experienced data-driven product designer with about a decade of experience in interaction design, product strategy, and leadership.">
   <meta name="twitter:image" content="./framer_assets/assets/assets_6Dy8TI2LoI9CDf0ZrkAHIwZogEo.jpg">
+  <link rel="stylesheet" href="case-study-shared.css">
 
   <link href="https://fonts.gstatic.com" rel="preconnect">
   <meta name="robots" content="max-image-preview:large">
@@ -2686,37 +2687,6 @@
       display: none !important;
     }
 
-    /* ====== METRIC CARDS ====== */
-.w3-metric-row {
-  display: flex;
-  gap: 16px;
-  overflow-x: auto;
-  overflow-y: clip;
-}
-.w3-metric-card {
-  flex: 1 0 0;
-  min-width: 0;
-  height: 480px;
-  background: #d5dad5;
-  border-radius: 16px;
-  padding: 56px 48px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.w3-metric-value {
-  font-weight: 500;
-  font-size: 40px;
-  line-height: 40px;
-  color: #000501;
-}
-.w3-metric-desc {
-  font-size: 18px;
-  line-height: 21px;
-  letter-spacing: -0.54px;
-  color: #000501;
-}
-
     /* ====== FONTS ====== */
     @font-face {
       font-family: 'Stabil Grotesk';
@@ -2885,37 +2855,6 @@
       gap: 16px;
     }
 
-    /* ====== HERO ====== */
-    .cp-hero {
-      background: #ff4c00;
-      border-radius: 16px;
-      padding: 48px 48px 64px;
-      height: 600px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .cp-hero-num {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid #d5dad5;
-      border-radius: 24px;
-      padding: 1px 16px 4px;
-      width: fit-content;
-      font-size: 18px;
-      color: #d5dad5;
-      line-height: normal;
-    }
-
-    .cp-hero-title {
-      font-size: 100.8px;
-      color: #fff;
-      letter-spacing: -1.01px;
-      line-height: 100.8px;
-    }
-
     /* ====== 2-CARD ROW ====== */
     .cp-card-row {
       display: flex;
@@ -3006,47 +2945,6 @@
       font-size: 14px;
       color: #757375;
       line-height: normal;
-    }
-
-    /* ====== DARK STATEMENT ====== */
-    .cp-statement {
-      background: #191719;
-      border-radius: 16px;
-      padding: 64px 48px;
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
-
-    .cp-statement-num {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid #fff1ea;
-      border-radius: 24px;
-      padding: 4px 16px;
-      width: fit-content;
-      font-size: 18px;
-      color: #fff1ea;
-      line-height: normal;
-    }
-
-    .cp-statement-title {
-      font-size: 100.8px;
-      line-height: 100.8px;
-      letter-spacing: -1.01px;
-      color: #fff1ea;
-    }
-
-    .cp-statement-title-offset {
-      text-indent: clamp(0px, 17vw, 280px);
-    }
-
-    .cp-statement-context {
-      font-size: 16px;
-      line-height: 20px;
-      color: #fff1ea;
-      max-width: 372px;
     }
 
     /* ====== CONCEPT TESTING SECTION ====== */
@@ -3309,19 +3207,19 @@
       align-items: flex-start;
     }
 
-    .cp-accessibility-statement .cp-statement-num {
+    .cp-accessibility-statement .statement-num {
       white-space: nowrap;
       flex-shrink: 0;
     }
 
-    .cp-accessibility-statement .cp-statement-title {
+    .cp-accessibility-statement .statement-title {
       font-size: 100.8px;
       line-height: 100.8px;
       letter-spacing: -1.01px;
       color: #fff1ea;
     }
 
-    .cp-accessibility-statement .cp-statement-context {
+    .cp-accessibility-statement .statement-context {
       margin-top: 24px;
       font-size: 16px;
       color: #fff1ea;
@@ -3389,82 +3287,7 @@
       display: block;
     }
 
-    /* ====== METRICS ====== */
-    .cp-metric-row {
-      display: flex;
-      gap: 16px;
-    }
-
-    .cp-metric-card {
-      flex: 1;
-      background: #fff1ea;
-      border-radius: 16px;
-      padding: 48px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-
-    .cp-metric-value {
-      font-size: 120px;
-      font-weight: 500;
-      line-height: 1;
-      letter-spacing: -2px;
-      color: #fe510d;
-    }
-
-    .cp-metric-desc {
-      font-size: 20px;
-      margin-top: 16px;
-      color: #0e0e0e;
-    }
-
     /* ====== DISCLAIMER ====== */
-    .cp-disclaimer {
-      background: #191719;
-      border-radius: 16px;
-      padding: 24px;
-      text-align: center;
-    }
-
-    .cp-disclaimer-text {
-      color: #f4e9e1;
-      font-size: 20px;
-    }
-
-    /* ====== FOOTER ====== */
-    .cp-page-footer {
-      padding: 32px;
-      margin-top: 0;
-      border-top: none;
-    }
-
-    .cp-page-footer p {
-      color: #757375;
-      font-size: 14px;
-      text-align: center;
-    }
-
-    /* ====== TABLET RESPONSIVE ====== */
-    @media (max-width: 1100px) {
-      .cp-statement {
-        padding: 48px 32px;
-        overflow: hidden;
-      }
-      .cp-statement-title {
-        font-size: 72px;
-        line-height: 74px;
-        overflow-wrap: break-word;
-        word-wrap: break-word;
-      }
-      .cp-statement-title-offset {
-        text-indent: 0;
-      }
-      .cp-statement-context {
-        max-width: 100%;
-      }
-    }
 
     /* ====== MOBILE RESPONSIVE ====== */
     @media (max-width: 809px) {
@@ -3504,19 +3327,6 @@
         padding: 20px;
       }
 
-      .cp-hero {
-        padding: 40px 20px;
-        height: auto;
-        min-height: 400px;
-        overflow: hidden;
-      }
-      .cp-hero-title {
-        font-size: 46px;
-        line-height: 48px;
-        overflow-wrap: break-word;
-        word-wrap: break-word;
-      }
-
       .cp-card-row {
         flex-direction: column;
       }
@@ -3530,20 +3340,6 @@
         height: auto !important;
         min-height: 0 !important;
         border-radius: 16px;
-      }
-
-      .cp-statement {
-        padding: 64px 20px;
-        overflow: hidden;
-      }
-      .cp-statement-title {
-        font-size: 46px;
-        line-height: 48px;
-        overflow-wrap: break-word;
-        word-wrap: break-word;
-      }
-      .cp-statement-context {
-        max-width: 100%;
       }
 
       .cp-concept-section {
@@ -3646,17 +3442,6 @@
         max-width: 320px;
       }
 
-      .cp-metric-row {
-        flex-direction: column;
-      }
-      .cp-metric-card {
-        height: auto;
-        min-height: auto;
-      }
-      .cp-metric-value {
-        font-size: 80px;
-      }
-
       .cp-card-text-heading {
         font-size: 36px;
         line-height: 38px;
@@ -3669,12 +3454,6 @@
         padding: 24px 20px;
       }
 
-      .cp-disclaimer {
-        padding: 20px;
-      }
-      .cp-disclaimer-text {
-        font-size: 16px;
-      }
     }
   </style>
 
@@ -3755,10 +3534,10 @@
         <div class="cp-main">
 
           <!-- HERO -->
-          <div class="cp-hero">
-            <span class="cp-hero-num">01</span>
-            <div class="cp-hero-title">
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Designing meaningful
+          <div class="case-hero">
+            <span class="case-hero-num">01</span>
+            <div class="case-hero-title case-hero-title-offset">
+              Designing meaningful
               continuity drivers</div>
           </div>
 
@@ -3798,13 +3577,13 @@
           </div>
 
           <!-- DARK STATEMENT: Zooming out -->
-          <div class="cp-statement">
-            <span class="cp-statement-num">Zooming oooout</span>
-            <div>
-              <div class="cp-statement-title cp-statement-title-offset">
+          <div class="statement statement--cream">
+            <span class="statement-num">Zooming oooout</span>
+            <div class="statement-copy">
+              <div class="statement-title statement-title-offset">
                 Started
                 with a concept test for future vision*.</div>
-              <div class="cp-statement-context" style="margin-top: 24px;">Leading 4 senior designers across squads, I
+              <div class="statement-context statement-context--spaced">Leading 4 senior designers across squads, I
                 consolidated future concepts, tested desirability with 14 participants, and set the foundation for
                 executing on continuity + freshness drivers</div>
             </div>
@@ -3904,10 +3683,10 @@
           </div>
 
           <!-- DARK STATEMENT: Zooming out -->
-          <div class="cp-statement">
-            <span class="cp-statement-num">Systems thinking</span>
-            <div>
-              <div class="cp-statement-title cp-statement-title-offset">
+          <div class="statement statement--cream">
+            <span class="statement-num">Systems thinking</span>
+            <div class="statement-copy">
+              <div class="statement-title statement-title-offset">
                 Resolving ambiguity when customer intent spans multiple (sub)categories</div>
             </div>
           </div>
@@ -3925,13 +3704,13 @@
 
 
           <!-- ACCESSIBILITY STATEMENT -->
-          <div class="cp-statement">
-            <span class="cp-statement-num">Sweating the details</span>
-            <div>
-              <div class="cp-statement-title cp-statement-title-offset">
+          <div class="statement statement--cream">
+            <span class="statement-num">Sweating the details</span>
+            <div class="statement-copy">
+              <div class="statement-title statement-title-offset">
                 Designing for
                 accessibility &amp; assistive technologies</div>
-              <div class="cp-statement-context" style="margin-top: 24px;">Examples of the module under large text,
+              <div class="statement-context statement-context--spaced">Examples of the module under large text,
                 landscape mode, and assistive technology constraints.</div>
             </div>
           </div>
@@ -3953,30 +3732,32 @@
           </div>
 
            <!-- METRIC CARDS -->
-    <div class="w3-metric-row">
-      <div class="w3-metric-card">
-        <div class="w3-metric-value">€XX Million</div>
-        <div class="w3-metric-desc">GMV by evolving Plus into the cross-proposition Loyalty program</div>
+    <div class="metric-row">
+      <div class="metric-card">
+        <div class="metric-value">€XX Million</div>
+        <div class="metric-desc">GMV by evolving Plus into the cross-proposition Loyalty program</div>
       </div>
-      <div class="w3-metric-card">
-        <div class="w3-metric-value">+17.8%</div>
-        <div class="w3-metric-desc">Registration rate</div>
+      <div class="metric-card">
+        <div class="metric-value">+17.8%</div>
+        <div class="metric-desc">Registration rate</div>
       </div>
     </div>
 
           <!-- DISCLAIMER -->
-          <div class="cp-disclaimer">
-            <div class="cp-disclaimer-text">Detailed case study available on request.</div>
+          <div class="disclaimer">
+            <div class="disclaimer-text">Detailed case study available on request.</div>
           </div>
 
         </div><!-- /.cp-main -->
       </div>
+    </div>
+  </div>
 
-      <!-- FOOTER -->
-      <div class="cp-page-footer">
-        <p>The works here have been abstracted to protect confidential information. If you need to see the full,
-          detailed version, please contact me at work@mayowatobi.com</p>
-      </div>
+  <!-- FOOTER -->
+  <div class="portfolio-abstraction-info">
+    <p>The works here have been abstracted to protect confidential information. If you need to see the full,
+      detailed version, please contact me at work@mayowatobi.com</p>
+  </div>
 
 </body>
 

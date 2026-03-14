@@ -37,6 +37,7 @@
     <meta name="twitter:title" content="OluwatobiMayowa">
     <meta name="twitter:description" content="An experienced data-driven product designer with about a decade of experience in interaction design, product strategy, and leadership.">
     <meta name="twitter:image" content="./framer_assets/assets/assets_6Dy8TI2LoI9CDf0ZrkAHIwZogEo.jpg">
+    <link rel="stylesheet" href="case-study-shared.css">
     
     <style data-framer-font-css>/* cyrillic-ext */
 @font-face {
@@ -612,13 +613,6 @@
   line-height: 160px;
 }
 
-/* ====== CARD ROW ====== */
-.w2-card-row {
-  display: flex;
-  gap: 16px;
-  overflow-x: auto;
-  overflow-y: clip;
-}
 .w2-card {
   flex: 1 0 0;
   min-width: 0;
@@ -649,53 +643,15 @@
 }
 
 /* Card with text (first card in row) */
-.w2-card-text-left {
-  align-items: flex-start;
-  justify-content: space-between;
-  padding: 40px 32px;
-}
-.w2-card-text-left .w2-card-heading {
+.w3-card-text .w2-card-heading {
   font-weight: 500;
   font-size: 46px;
   line-height: 46px;
-  color: #000501;
 }
-.w2-card-text-left .w2-card-heading-muted {
-  color: rgba(0,5,1,0.6);
-}
-.w2-card-text-left .w2-card-rating {
+.w3-card-text .w2-card-rating {
   font-size: 39px;
   letter-spacing: -1.19px;
   line-height: 44px;
-  color: #000501;
-}
-
-/* ====== DARK GREEN STATEMENT ====== */
-.w2-statement {
-  background: #191719;
-  border-radius: 16px;
-  padding: 64px 48px;
-  height: 600px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.w2-statement-num {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #d5dad5;
-  border-radius: 26px;
-  padding: 4px 16px;
-  width: fit-content;
-  font-size: 18px;
-  color: #d5dad5;
-}
-.w2-statement-text {
-  font-size: 100px;
-  line-height: 100px;
-  letter-spacing: -1.01px;
-  color: #d5dad5;
 }
 
 /* ====== LIGHT SECTION (video/image card) ====== */
@@ -887,36 +843,6 @@
   color: #000501;
 }
 
-/* ====== DISCLAIMER BAR ====== */
-.w2-disclaimer {
-  background: #191719;
-  border-radius: 16px;
-  padding: 24px;
-  height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.w2-disclaimer-text {
-  font-size: 21px;
-  color: #f4e9e1;
-  letter-spacing: -0.22px;
-  text-align: center;
-}
-
-/* ====== PAGE FOOTER ====== */
-.w2-page-footer {
-  padding: 24px 32px 72px;
-}
-.w2-page-footer p {
-  font-family: 'Roobert', 'Stabil Grotesk', sans-serif;
-  font-weight: 500;
-  font-size: 18px;
-  color: rgba(255,255,255,0.4);
-  letter-spacing: -0.6px;
-  max-width: 860px;
-}
-
 /* ====== RESPONSIVE ====== */
 @media (max-width: 1100px) {
   .w2-page {
@@ -932,21 +858,18 @@
   .w2-hero-title { font-size: 80px; line-height: 80px; }
   .w2-hero-counter { font-size: 48px; line-height: 52px; }
   .w2-hero { height: auto; min-height: 400px; }
-  .w2-statement { height: auto; min-height: 400px; }
-  .w2-statement-text { font-size: 52px; line-height: 56px; }
   .w2-challenge-body { font-size: 52px; line-height: 56px; min-height: auto; }
   .w2-challenge-inner { flex-direction: column; gap: 24px; }
   .w2-challenge-label { width: auto; padding-top: 0; }
-  .w2-card-row { flex-direction: column; }
+  .card-row { flex-direction: column; }
   .w2-card { height: auto; min-height: 500px; }
   .w2-brand-row { flex-direction: column; height: auto; }
   .w2-tabs-video { height: 400px; }
 }
 @media (max-width: 600px) {
   .w2-hero-title { font-size: 48px; line-height: 52px; }
-  .w2-statement-text { font-size: 36px; line-height: 40px; }
   .w2-challenge-body { font-size: 36px; line-height: 40px; }
-  .w2-card-text-left .w2-card-heading { font-size: 28px; line-height: 30px; }
+  .w3-card-text .w2-card-heading { font-size: 28px; line-height: 30px; }
 }
 </style>
 
@@ -1059,8 +982,8 @@
     </div>
 
     <!-- 3-CARD ROW: text card + video card + phone card -->
-    <div class="w2-card-row">
-      <div class="w2-card w2-card-light w2-card-text-left">
+    <div class="card-row">
+      <div class="w3-card-text w3-card-text--ink">
         <div>
           <div class="w2-card-heading">
             Scaling design at a crypto in a low-trust market:
@@ -1082,9 +1005,9 @@
     </div>
 
     <!-- STATEMENT 01 -->
-    <div class="w2-statement">
-      <span class="w2-statement-num">01</span>
-      <div class="w2-statement-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Built a token-based design system to accelerate shipping</div>
+    <div class="statement statement--sage">
+      <span class="statement-num">01</span>
+      <div class="statement-title statement-title-offset">Built a token-based design system to accelerate shipping</div>
     </div>
 
     <!-- DESIGN SYSTEM VIDEO -->
@@ -1095,9 +1018,9 @@
     </div>
 
     <!-- STATEMENT 02 -->
-    <div class="w2-statement">
-      <span class="w2-statement-num">02</span>
-      <div class="w2-statement-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Strategic partner during hypergrowth</div>
+    <div class="statement statement--sage">
+      <span class="statement-num">02</span>
+      <div class="statement-title statement-title-offset">Strategic partner during hypergrowth</div>
     </div>
 
     <!-- CHALLENGE 01 -->
@@ -1163,7 +1086,7 @@
     </div>
 
     <!-- 3 PHONE SCREENSHOTS -->
-    <div class="w2-card-row">
+    <div class="card-row">
       <div class="w2-card w2-card-offwhite">
         <div class="w2-card-phone">
           <img src="6af2bfb254152a4773b1257f5cc3eccd39c5e580.png" alt="Busha redesign 1">
@@ -1182,11 +1105,11 @@
     </div>
 
     <!-- BRANDING + RATING ROW -->
-    <div class="w2-card-row" style="height:720px;">
+    <div class="card-row" style="height:720px;">
       <div class="w2-card w2-card-green" style="flex:0 0 428px; padding:0; overflow:hidden;">
         <img src="453a446997a85ec2601cfe3a083392c1bc7fb725.png" alt="The better side of money" style="width:100%; height:100%; object-fit:cover;">
       </div>
-      <div class="w2-card w2-card-light w2-card-text-left" style="flex:1;">
+      <div class="w3-card-text w3-card-text--ink">
         <div class="w2-card-rating">4.5★</div>
         <div class="w2-brand-rating-desc">
           Apple App Store and<br>Google Play reviews
@@ -1195,15 +1118,15 @@
     </div>
 
     <!-- DISCLAIMER BAR -->
-    <div class="w2-disclaimer">
-      <div class="w2-disclaimer-text">Detailed case study available on request.</div>
+    <div class="disclaimer">
+      <div class="disclaimer-text">Detailed case study available on request.</div>
     </div>
 
   </div>
 </div>
 
 <!-- PAGE FOOTER -->
-<div class="w2-page-footer">
+<div class="portfolio-abstraction-info">
   <p>The works here have been abstracted to protect confidential information. If you need to see the full, detailed version, please contact me at work@mayowatobi.com</p>
 </div>
 

@@ -45,6 +45,7 @@
   <meta name="twitter:description"
     content="An experienced data-driven product designer with about a decade of experience in interaction design, product strategy, and leadership.">
   <meta name="twitter:image" content="./framer_assets/assets/assets_6Dy8TI2LoI9CDf0ZrkAHIwZogEo.jpg">
+  <link rel="stylesheet" href="case-study-shared.css">
 
   <link href="https://fonts.gstatic.com" rel="preconnect">
   <meta name="robots" content="max-image-preview:large">
@@ -2855,45 +2856,7 @@
       gap: 16px;
     }
 
-    /* ====== HERO ====== */
-    .ctl-hero {
-      background: #ff4c00;
-      border-radius: 16px;
-      padding: 48px 48px 64px;
-      height: 600px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .ctl-hero-num {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid #d5dad5;
-      border-radius: 24px;
-      padding: 1px 16px 4px;
-      width: fit-content;
-      font-size: 18px;
-      color: #d5dad5;
-      line-height: normal;
-    }
-
-    .ctl-hero-title {
-      font-family: 'Stabil Grotesk', sans-serif;
-      font-weight: 400;
-      font-size: 100.8px;
-      line-height: 100.8px;
-      letter-spacing: -1.01px;
-      color: #fff;
-    }
-
     /* ====== CARD ROWS ====== */
-    .ctl-card-row {
-      display: flex;
-      gap: 16px;
-    }
-
     .ctl-card {
       flex: 1;
       background: #e5e5e5;
@@ -2904,24 +2867,12 @@
       flex-direction: column;
     }
 
-    .ctl-card-text {
-      flex: 1;
-      background: #e5e5e5;
-      border-radius: 16px;
-      min-height: 720px;
-      padding: 32px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-    }
-
     .ctl-card-text-heading {
       font-family: 'Stabil Grotesk', sans-serif;
       font-weight: 500;
       font-size: 28px;
       line-height: 1.2;
       letter-spacing: -0.5px;
-      color: #000;
       margin-bottom: 16px;
     }
 
@@ -2930,11 +2881,10 @@
       font-weight: 400;
       font-size: 16px;
       line-height: 1.5;
-      color: #000;
     }
 
     .ctl-card-text-body-faded {
-      opacity: 0.6;
+      opacity: 1;
     }
 
     .ctl-card-text-heading-faded {
@@ -2943,9 +2893,8 @@
       font-size: 28px;
       line-height: 1.2;
       letter-spacing: -0.5px;
-      color: #000;
       margin-bottom: 16px;
-      opacity: 0.6;
+      opacity: 1;
     }
 
     .ctl-card-image {
@@ -2998,51 +2947,6 @@
       font-size: 14px;
       color: rgba(0, 0, 0, 0.5);
       padding: 16px 24px 24px;
-    }
-
-    /* ====== DARK STATEMENT SECTION ====== */
-    .ctl-statement {
-      background: #191719;
-      border-radius: 16px;
-      padding: 48px 56px;
-      min-height: 400px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-    }
-
-    .ctl-statement-num {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 999px;
-      padding: 6px 16px;
-      font-family: 'PP Supply Mono', monospace;
-      font-size: 14px;
-      color: rgba(255, 255, 255, 0.6);
-      margin-bottom: 16px;
-      width: fit-content;
-    }
-
-    .ctl-statement-title {
-      font-family: 'Stabil Grotesk', sans-serif;
-      font-weight: 400;
-      font-size: 72px;
-      line-height: 1.05;
-      letter-spacing: -2px;
-      color: #fff;
-      white-space: pre-line;
-    }
-
-    .ctl-statement-body {
-      font-family: 'Stabil Grotesk', sans-serif;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 1.5;
-      color: rgba(255, 255, 255, 0.6);
-      max-width: 372px;
-      margin-top: 24px;
     }
 
     /* ====== CHALLENGE SECTION ====== */
@@ -3148,7 +3052,7 @@
       margin: 0;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 8px;
     }
 
     .ctl-list li {
@@ -3168,41 +3072,82 @@
       top: 9px;
       width: 6px;
       height: 6px;
-      background: rgba(0, 0, 0, 0.3);
+      background: var(--w3-card-text-color, #000501);
       border-radius: 50%;
     }
 
-    /* ====== DISCLAIMER ====== */
-    .ctl-disclaimer {
-      background: #191719;
-      border-radius: 16px;
-      height: 70px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+    /* ====== TABLET RESPONSIVE ====== */
+    @media (max-width: 1279px) {
+      .ctl-page {
+        flex-direction: column;
+        gap: 24px;
+        padding: 20px;
+      }
 
-    .ctl-disclaimer-text {
-      font-family: 'Stabil Grotesk', sans-serif;
-      font-weight: 400;
-      font-size: 14px;
-      color: rgba(255, 255, 255, 0.5);
-    }
+      .w2-sidebar {
+        width: 100%;
+        min-width: auto;
+        position: static;
+        flex-direction: row;
+        padding: 12px 0;
+        border-radius: 16px;
+      }
+      .w2-sidebar-company {
+        display: none;
+      }
+      .w2-sidebar-nav {
+        flex-direction: row;
+        width: 100%;
+        padding: 0 8px;
+      }
+      .w2-sidebar-nav .w2-sidebar-btn {
+        display: none;
+      }
+      .w2-sidebar-nav .w2-sidebar-btn.active {
+        display: flex;
+        width: 100%;
+      }
+      .w2-sidebar-btn.active .w2-sidebar-btn-subtitle {
+        display: block;
+      }
+      .w2-sidebar-btn.active .w2-sidebar-btn-arrow {
+        transform: rotate(90deg);
+      }
 
-    /* ====== PAGE FOOTER ====== */
-    .ctl-page-footer {
-      padding: 80px 32px 40px;
-      text-align: center;
-    }
+      .card-row {
+        flex-direction: column;
+        gap: 16px;
+      }
+      .ctl-card,
+      .ctl-card-image,
+      .ctl-card-labeled,
+      .ctl-card-mixed {
+        width: 100%;
+        flex: none;
+        height: auto !important;
+        min-height: 0 !important;
+      }
+      .ctl-card-image,
+      .ctl-card-labeled-img,
+      .ctl-card-mixed-img {
+        padding: 32px;
+      }
 
-    .ctl-page-footer p {
-      font-family: 'Stabil Grotesk', sans-serif;
-      font-weight: 400;
-      font-size: 14px;
-      color: rgba(255, 255, 255, 0.3);
-      max-width: 600px;
-      margin: 0 auto;
-      line-height: 1.6;
+      .ctl-challenge {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+        padding: 32px;
+        min-height: 0;
+        overflow: hidden;
+      }
+      .ctl-challenge-title {
+        font-size: 72px;
+        line-height: 74px;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+      }
+
     }
 
     /* ====== MOBILE RESPONSIVE ====== */
@@ -3243,25 +3188,11 @@
         padding: 20px;
       }
 
-      .ctl-hero {
-        padding: 40px 20px;
-        height: auto;
-        min-height: 400px;
-        overflow: hidden;
-      }
-      .ctl-hero-title {
-        font-size: 46px;
-        line-height: 48px;
-        overflow-wrap: break-word;
-        word-wrap: break-word;
-      }
-
-      .ctl-card-row {
+      .card-row {
         flex-direction: column;
         gap: 16px;
       }
       .ctl-card,
-      .ctl-card-text,
       .ctl-card-image,
       .ctl-card-labeled,
       .ctl-card-mixed {
@@ -3270,29 +3201,11 @@
         height: auto !important;
         min-height: 0 !important;
       }
-      .ctl-card-text {
-        padding: 32px 20px;
-      }
       .ctl-card-image {
         padding: 40px 20px;
       }
       .ctl-card-mixed {
         padding: 40px 20px;
-      }
-
-      .ctl-statement {
-        padding: 64px 20px;
-        overflow: hidden;
-      }
-      .ctl-statement-title {
-        font-size: 46px;
-        line-height: 48px;
-        overflow-wrap: break-word;
-        word-wrap: break-word;
-      }
-      .ctl-statement-body {
-        max-width: 100%;
-        width: 100%;
       }
 
       .ctl-challenge {
@@ -3307,10 +3220,6 @@
         word-wrap: break-word;
       }
 
-      .ctl-page-footer p {
-        max-width: 100%;
-        width: 100%;
-      }
     }
   </style>
 
@@ -3390,33 +3299,33 @@
         <div class="ctl-main">
 
           <!-- HERO -->
-          <div class="ctl-hero">
-            <span class="ctl-hero-num">01</span>
-            <div class="ctl-hero-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HMW make algorithmic outfit inspiration meaningful for real users?</div>
+          <div class="case-hero">
+            <span class="case-hero-num">01</span>
+            <div class="case-hero-title case-hero-title-offset">HMW make algorithmic outfit inspiration meaningful for real users?</div>
           </div>
 
           <!-- THREE-CARD ROW 1: Research -->
-          <div class="ctl-card-row">
-            <div class="ctl-card-text">
+          <div class="card-row">
+            <div class="w3-card-text w3-card-text--ink">
               <div>
-                <div class="ctl-card-text-heading">Started with generative research to identify insight gaps</div>
-                <div class="ctl-card-text-body">Understand how users perceive, interpret and interact with outfit suggestions. Assess their expectations about starting points, control and decision support on suggested outfits.</div>
+                <div class="ctl-card-text-heading">Understanding how people construct outfits</div>
+                <div class="ctl-card-text-body">We began with generative research to close insight gaps, studying how users interpret outfit suggestions, where they expect control, and what helps them trust recommendations.</div>
               </div>
             </div>
             <div class="ctl-card-image">
               <img src="https://www.figma.com/api/mcp/asset/fd543339-b34f-454d-b05b-b9b2beb8c74b" alt="Research phone mockup">
             </div>
-            <div class="ctl-card-text">
+            <div class="w3-card-text w3-card-text--ink">
               <div>
-                <div class="ctl-card-text-heading-faded">What we learned</div>
-                <div class="ctl-card-text-body ctl-card-text-body-faded">
+                <div class="ctl-card-text-heading">Key insights</div>
+                <div class="ctl-card-text-body ctl-card-text-body">
                   <ul class="ctl-list">
                     <li>Outfit planning is mental work and often guesswork</li>
                     <li>Context drives outfit decisions.</li>
-                    <li>Everyone anchors differently.</li>
+                    <li>Anchors vary by person (item, occasion, mood)</li>
                     <li>Anchored on owned item increases perceived value.</li>
-                    <li>Bad first suggestions kill trust quickly.</li>
-                    <li>Visualization quality is critical for confidence: Separate product photos and mismatched angles make it hard to imagine the outfit.</li>
+                    <li>Poor first suggestions destroy trust</li>
+                    <li>Visualization quality drives confidence</li>
                   </ul>
                 </div>
               </div>
@@ -3424,14 +3333,14 @@
           </div>
 
           <!-- DARK STATEMENT: Hypothesis #1 -->
-          <div class="ctl-statement">
-            <span class="ctl-statement-num">01</span>
-            <div class="ctl-statement-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hypothesis #1</div>
-            <div class="ctl-statement-body">Pre-selected contextual anchoring, combined with a rolodex-style outfit view, helps users quickly understand outfit intent and coherence before exercising control.</div>
+          <div class="statement statement--cream">
+            <span class="statement-num">Hypothesis</span>
+            <div class="statement-title statement-title-offset">Pre-selected context helps users grasp outfit intent before editing</div>
+            <div class="statement-context statement-context--spaced">Pre-selected contextual anchoring, combined with a rolodex-style outfit view, helps users quickly understand outfit intent and coherence before exercising control.</div>
           </div>
 
           <!-- THREE-CARD ROW 2: Phone Mockups -->
-          <div class="ctl-card-row">
+          <div class="card-row">
             <div class="ctl-card-labeled">
               <div class="ctl-card-labeled-img">
                 <img src="https://www.figma.com/api/mcp/asset/3ad787d3-da81-4812-a541-69fbeb04ac64" alt="Surface UX">
@@ -3452,19 +3361,16 @@
             </div>
           </div>
 
-          <!-- CHALLENGE SECTION 1 -->
-          <div class="ctl-challenge">
-            <div class="ctl-challenge-left">
-              <span class="ctl-challenge-num">02</span>
-              <div class="ctl-challenge-label">Challenge</div>
-            </div>
-            <div class="ctl-challenge-right">
-              <div class="ctl-challenge-title">How this could be scaled?</div>
-            </div>
+          <!-- DARK STATEMENT: Hypothesis #1 -->
+          <div class="statement statement--cream">
+            <span class="statement-num">Systems thinking</span>
+            <div class="statement-title statement-title-offset">Designing outfit inspiration as a scalable system</div>
+            <div class="statement-context statement-context--spaced">Early concept tests showed users could quickly understand outfit intent when suggestions were anchored around context.
+The next step was designing a system that could scale, expanding the pairing matrix while giving users ways to steer the algorithm.</div>
           </div>
 
           <!-- THREE-CARD ROW 3: Scaling -->
-          <div class="ctl-card-row">
+          <div class="card-row">
             <div class="ctl-card-labeled">
               <div class="ctl-card-labeled-img">
                 <img src="https://www.figma.com/api/mcp/asset/d44fa7c5-fdb6-42d3-aa8e-c1ce5cdeb3af" alt="Through collage">
@@ -3506,15 +3412,17 @@
           </div>
 
           <!-- DISCLAIMER -->
-          <div class="ctl-disclaimer">
-            <div class="ctl-disclaimer-text">Detailed case study available on request.</div>
+          <div class="disclaimer">
+            <div class="disclaimer-text">Detailed case study available on request.</div>
           </div>
 
         </div><!-- /.ctl-main -->
       </div>
+    </div>
+  </div>
 
       <!-- FOOTER -->
-      <div class="ctl-page-footer">
+      <div class="portfolio-abstraction-info">
         <p>The works here have been abstracted to protect confidential information. If you need to see the full,
           detailed version, please contact me at work@mayowatobi.com</p>
       </div>
