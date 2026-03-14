@@ -1482,6 +1482,22 @@
   line-height: 100.8px;
   letter-spacing: -1.008px;
   color: #fff1ea;
+  display: flex;
+  flex-direction: column;
+}
+.w3-impact-rotator {
+  display: grid;
+}
+.w3-impact-rotating-item {
+  grid-area: 1 / 1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.w3-impact-rotating-item.active {
+  opacity: 1;
+}
+.w3-impact-static {
+  display: block;
 }
 .w3-impact-browser {
   display: flex;
@@ -1754,7 +1770,14 @@
       <!-- IMPACT -->
     <div class="w3-impact">
       <div class="w3-impact-badge">Impact</div>
-      <div class="w3-impact-title">50M customers, 25 markets, 2 propositions, 1 account</div>
+      <div class="w3-impact-title">
+        <span class="w3-impact-rotator">
+          <span class="w3-impact-rotating-item active">50M customers.</span>
+          <span class="w3-impact-rotating-item">25 markets.</span>
+          <span class="w3-impact-rotating-item">2 propositions.</span>
+        </span>
+        <span class="w3-impact-static">1 Account</span>
+      </div>
       <div class="w3-impact-browser">
         <img class="w3-impact-toolbar" src="sso-toolbar.svg" alt="Browser toolbar">
         <div class="w3-impact-slideshow">
@@ -1807,11 +1830,23 @@
 (function() {
   var slides = document.querySelectorAll('.w3-impact-slide');
   var current = 0;
-  setInterval(function() {
-    slides[current].classList.remove('active');
-    current = (current + 1) % slides.length;
-    slides[current].classList.add('active');
-  }, 3000);
+  if (slides.length > 1) {
+    setInterval(function() {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }, 2000);
+  }
+
+  var rotatingItems = document.querySelectorAll('.w3-impact-rotating-item');
+  var rotatingCurrent = 0;
+  if (rotatingItems.length > 1) {
+    setInterval(function() {
+      rotatingItems[rotatingCurrent].classList.remove('active');
+      rotatingCurrent = (rotatingCurrent + 1) % rotatingItems.length;
+      rotatingItems[rotatingCurrent].classList.add('active');
+    }, 2000);
+  }
 })();
 </script>
 </body>

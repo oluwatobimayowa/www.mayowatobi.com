@@ -3038,6 +3038,10 @@
       color: #fff1ea;
     }
 
+    .cp-statement-title-offset {
+      text-indent: clamp(0px, 17vw, 280px);
+    }
+
     .cp-statement-context {
       font-size: 16px;
       line-height: 20px;
@@ -3249,23 +3253,39 @@
       border: 1px solid #0e0e0e;
       border-top: none;
       border-radius: 0 0 16px 16px;
-      padding: 32px 40px;
       background: #fdf7f0;
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      padding-bottom: 32px;
     }
 
-    .cp-tabs-images {
+    .cp-tabs-visual {
+      width: 100%;
+      padding: 32px 40px 0;
       display: flex;
-      gap: 16px;
       justify-content: center;
     }
 
-    .cp-tabs-images img {
-      max-height: 700px;
-      border-radius: 12px;
-      flex: 1;
-      min-width: 0;
+    .cp-tabs-visual img {
+      width: 100%;
+      max-width: 834px;
+      height: auto;
+      display: block;
       object-fit: contain;
+    }
+
+    .cp-tabs-footer {
+      width: 100%;
+      padding: 0 40px;
+      font-size: 16px;
+      line-height: 20px;
+      color: rgba(14, 14, 14, 0.6);
+    }
+
+    .cp-tabs-footer p {
+      margin: 0;
     }
 
     /* ====== FULL IMAGE SECTIONS ====== */
@@ -3309,23 +3329,13 @@
       line-height: 20px;
     }
 
-    /* Side-by-side images */
+    /* ====== ACCESSIBILITY IMAGE ROW ====== */
     .cp-images-row {
       display: flex;
       gap: 16px;
     }
 
-    .cp-images-row .cp-image-section {
-      flex: 1;
-      min-width: 0;
-    }
-
-    /* ====== ACCESSIBILITY CARDS ====== */
-    .cp-a11y-row {
-      display: flex;
-      gap: 16px;
-    }
-    .cp-a11y-card {
+    .cp-images-card {
       background: #fff1ea;
       border-radius: 16px;
       padding: 24px 0;
@@ -3334,30 +3344,45 @@
       flex-direction: column;
       overflow: hidden;
     }
-    .cp-a11y-card-narrow {
+
+    .cp-images-card-narrow {
       flex: 0 0 auto;
       width: 320px;
       align-items: flex-end;
     }
-    .cp-a11y-card-wide {
+
+    .cp-images-card-wide {
       flex: 1;
       min-width: 0;
       align-items: center;
       justify-content: center;
     }
-    .cp-a11y-label {
+
+    .cp-images-label {
       font-family: 'Stabil Grotesk', sans-serif;
       font-size: 12px;
       color: rgba(0, 5, 1, 0.6);
       padding: 0 20px;
       width: 100%;
     }
-    .cp-a11y-card-narrow img {
+
+    .cp-images-card-media {
+      flex: 1;
+      min-height: 0;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cp-images-card-narrow img {
       width: 320px;
       height: auto;
       display: block;
+      margin-top: auto;
     }
-    .cp-a11y-card-wide img {
+
+    .cp-images-card-wide img {
       max-width: 736px;
       width: 100%;
       height: auto;
@@ -3419,6 +3444,26 @@
       color: #757375;
       font-size: 14px;
       text-align: center;
+    }
+
+    /* ====== TABLET RESPONSIVE ====== */
+    @media (max-width: 1100px) {
+      .cp-statement {
+        padding: 48px 32px;
+        overflow: hidden;
+      }
+      .cp-statement-title {
+        font-size: 72px;
+        line-height: 74px;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+      }
+      .cp-statement-title-offset {
+        text-indent: 0;
+      }
+      .cp-statement-context {
+        max-width: 100%;
+      }
     }
 
     /* ====== MOBILE RESPONSIVE ====== */
@@ -3565,36 +3610,40 @@
       .cp-tabs-header {
         flex-direction: column;
       }
+      .cp-tabs-body {
+        gap: 24px;
+        padding-bottom: 24px;
+      }
       .cp-tab-label {
         font-size: 14px;
       }
       .cp-tab-badge {
         font-size: 12px;
       }
-      .cp-tabs-images {
-        flex-direction: column;
+      .cp-tabs-visual {
+        padding: 24px 20px 0;
       }
-      .cp-tabs-images img {
-        max-height: none;
-        width: 100%;
+      .cp-tabs-footer {
+        padding: 0 20px;
       }
 
       .cp-images-row {
         flex-direction: column;
       }
-
-      .cp-a11y-row {
-        flex-direction: column;
-      }
-      .cp-a11y-card {
+      .cp-images-card {
         height: auto !important;
         min-height: 0 !important;
       }
-      .cp-a11y-card-narrow {
+      .cp-images-card-narrow {
         width: 100%;
+        align-items: center;
       }
-      .cp-a11y-card-narrow img {
+      .cp-images-card-media {
+        padding: 24px 20px 0;
+      }
+      .cp-images-card-narrow img {
         width: 100%;
+        max-width: 320px;
       }
 
       .cp-metric-row {
@@ -3752,8 +3801,8 @@
           <div class="cp-statement">
             <span class="cp-statement-num">Zooming oooout</span>
             <div>
-              <div class="cp-statement-title">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Started
+              <div class="cp-statement-title cp-statement-title-offset">
+                Started
                 with a concept test for future vision*.</div>
               <div class="cp-statement-context" style="margin-top: 24px;">Leading 4 senior designers across squads, I
                 consolidated future concepts, tested desirability with 14 participants, and set the foundation for
@@ -3830,7 +3879,7 @@
               priorities.</p>
           </div>
 
-          <!-- EXPLORATIONS / FINAL VERSION TABS -->
+          <!-- EXPLORATIONS / FINAL VERSION COMPARISON -->
           <div class="cp-tabs-section">
             <div class="cp-tabs-header">
               <div class="cp-tab">
@@ -3843,10 +3892,13 @@
               </div>
             </div>
             <div class="cp-tabs-body">
-              <div class="cp-tabs-images">
-                <img src="e1c878c00844fecc62778476a671cae7f6b17d94.png" alt="Feed exploration 1">
-                <img src="c6dc01494277c28841fbb750f57e4887c6df612a.png" alt="Feed exploration 2">
-                <img src="bbaa2dd30a1b3261967c764d81159a086478b958.png" alt="Feed exploration 3">
+              <div class="cp-tabs-visual">
+                <img src="cp-exploration-to-final.png"
+                  alt="Comparison between exploration and final shipped version of the re-engagement module">
+              </div>
+              <div class="cp-tabs-footer">
+                <p>By restoring orientation, we improved commercial uplift.</p>
+                <p>But more importantly, we unlocked a reusable logic now considered for other re-engagement surfaces.</p>
               </div>
             </div>
           </div>
@@ -3855,8 +3907,8 @@
           <div class="cp-statement">
             <span class="cp-statement-num">Systems thinking</span>
             <div>
-              <div class="cp-statement-title">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Resolving ambiguity when customer intent spans multiple (sub)categories</div>
+              <div class="cp-statement-title cp-statement-title-offset">
+                Resolving ambiguity when customer intent spans multiple (sub)categories</div>
             </div>
           </div>
 
@@ -3876,8 +3928,8 @@
           <div class="cp-statement">
             <span class="cp-statement-num">Sweating the details</span>
             <div>
-              <div class="cp-statement-title">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Designing for
+              <div class="cp-statement-title cp-statement-title-offset">
+                Designing for
                 accessibility &amp; assistive technologies</div>
               <div class="cp-statement-context" style="margin-top: 24px;">Examples of the module under large text,
                 landscape mode, and assistive technology constraints.</div>
@@ -3886,13 +3938,17 @@
 
           <!-- ACCESSIBILITY IMAGES (side by side) -->
           <div class="cp-images-row">
-            <div class="cp-image-section">
-              <img src="f52ed7dac9c63b34f803fb2de8a0d4d756fe6d8c.png"
-                alt="Accessibility — large text and landscape mode">
+            <div class="cp-images-card cp-images-card-narrow">
+              <div class="cp-images-label">Font size: 200%</div>
+              <img src="cp-font-size-200.svg"
+                alt="Continue shopping module with font size set to 200%">
             </div>
-            <div class="cp-image-section">
-              <img src="eef6634fd840b0c97e2ec8ea348041b9c43deb7a.png"
-                alt="Accessibility — assistive technology constraints">
+            <div class="cp-images-card cp-images-card-wide">
+              <div class="cp-images-label">Landscape mode</div>
+              <div class="cp-images-card-media">
+                <img src="cp-landscape-mode.svg"
+                  alt="Continue shopping module shown in landscape mode">
+              </div>
             </div>
           </div>
 
