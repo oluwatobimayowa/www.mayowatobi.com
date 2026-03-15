@@ -728,8 +728,6 @@
   .phone-stack, .purple-stack { width: 100%; height: auto; }
   .phone-back { width: 100%; height: auto; aspect-ratio: 9/19; }
   .purple-inner { width: 100%; height: auto; aspect-ratio: 9/19; }
-  .metric-row { flex-direction: column; }
-  .metric-card { height: auto !important; min-height: 0 !important; }
   .w3-image-row { flex-direction: column; gap: 24px; }
   .w3-image-phone-combo { width: 280px; height: auto; aspect-ratio: 425/872; }
   .w3-image-phone-combo .w3-phone-screenshot { top: 6.6%; left: 5.9%; width: 88.2%; height: 93.7%; }
@@ -744,11 +742,6 @@
   .w3-guiding-cell-decision, .w3-guiding-cell-decision-header { flex: 0 0 280px; }
 }
 @media (max-width: 809px) {
-  .case-page {
-    flex-direction: column;
-    gap: 32px;
-    padding: 20px;
-  }
   .w3-challenge { padding: 24px 20px; overflow: hidden; }
   .w3-challenge-body { font-size: 46px; line-height: 48px; min-height: 0 !important; overflow-wrap: break-word; word-wrap: break-word; }
   .w3-challenge-inner { flex-direction: column; gap: 24px; }
@@ -786,7 +779,7 @@
 }
 </style>
 
-<div class="case-page">
+<div class="case-page case-page--mobile-gap-32">
   <!-- SIDEBAR (reused from work-2) -->
   <aside class="case-nav">
     <div class="case-nav-company">
@@ -927,7 +920,7 @@
     </div>
 
     <!-- METRIC CARDS -->
-    <div class="metric-row">
+    <div class="metric-row metric-row--tablet-stack">
       <div class="metric-card">
         <div class="metric-value">€XX Million</div>
         <div class="metric-desc">GMV by evolving Plus into the cross-proposition Loyalty program</div>
