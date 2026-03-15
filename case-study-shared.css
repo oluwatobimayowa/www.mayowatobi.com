@@ -600,7 +600,6 @@
 .card-text .brand-rating-desc,
 .card-text .ctl-card-text-heading,
 .card-text .ctl-card-text-body,
-.card-text .ctl-card-text-heading-faded,
 .card-text .ctl-list li {
   color: var(--card-text-color);
 }
@@ -629,8 +628,7 @@
   letter-spacing: -0.54px;
 }
 
-.card-text .ctl-card-text-heading,
-.card-text .ctl-card-text-heading-faded {
+.card-text .ctl-card-text-heading {
   font-family: "Stabil Grotesk", sans-serif;
   font-weight: 500;
   font-size: 28px;
@@ -639,17 +637,11 @@
   margin-bottom: 16px;
 }
 
-.card-text .ctl-card-text-body,
-.card-text .ctl-card-text-body-faded {
+.card-text .ctl-card-text-body {
   font-family: "Stabil Grotesk", sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
-}
-
-.card-text .ctl-card-text-body-faded,
-.card-text .ctl-card-text-heading-faded {
-  opacity: 1;
 }
 
 .split-media-row {
@@ -805,12 +797,6 @@
   justify-content: center;
   padding: 32px 40px;
   height: 720px;
-}
-
-.concept-showcase-media img {
-  width: 300px;
-  border-radius: 32px;
-  box-shadow: 0 2.8px 22.2px rgba(0, 0, 0, 0.25);
 }
 
 .concept-showcase-media video {
@@ -1080,7 +1066,7 @@
 
 .metric-desc {
   font-size: 18px;
-  line-height: 21px;
+  line-height: 24px;
   letter-spacing: -0.54px;
   color: #000501;
 }
@@ -1194,7 +1180,6 @@
   .challenge-inner { flex-direction: column; gap: 24px; }
   .challenge-label { width: auto; padding-top: 0; }
   .card-row { flex-direction: column; gap: 16px; overflow: visible; }
-  .brand-row { flex-direction: column; height: auto; }
   .tabs-video { height: 400px; }
 }
 
@@ -1346,6 +1331,7 @@
 
   .split-media-row {
     flex-direction: column;
+    gap: 16px;
   }
 
   .split-media-text {
@@ -1353,11 +1339,12 @@
     min-height: 0 !important;
     border-radius: 16px;
     padding: 32px 20px;
+    gap: 20px;
   }
 
   .split-media-heading {
     font-size: 36px;
-    line-height: 38px;
+    line-height: 36px;
   }
 
   .split-media-visual {
@@ -1481,8 +1468,8 @@
     width: 100%;
     flex: none;
     min-height: 0;
-    padding: 20px;
-    gap: 20px;
+    padding: 24px;
+    gap: 48px;
     justify-content: flex-start;
   }
 
