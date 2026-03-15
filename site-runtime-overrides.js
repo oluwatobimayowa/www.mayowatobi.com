@@ -36,10 +36,6 @@
           z-index: 40;
         }
 
-        .framer-1i11eel-container.case-study-reading-preview {
-          isolation: isolate;
-        }
-
         .framer-1i11eel-container [data-framer-name="Available for new projects"],
         .framer-1i11eel-container [data-framer-name="Available for new projects"] .framer-text {
           color: #fff !important;
@@ -48,25 +44,30 @@
           --variable-reference-Shm0RqnCk-xqlGn3fpu: #fff !important;
         }
 
-        .framer-1i11eel-container.case-study-reading-preview::after {
-          content: "";
-          position: absolute;
-          top: calc(100% + 12px);
-          right: 0;
+        .case-study-reading-float {
+          position: fixed;
+          top: 0;
+          left: 0;
           width: 140px;
           aspect-ratio: 820 / 1248;
-          background: url("/our-dollar-your-problem.jpeg") center center / cover no-repeat;
           border-radius: 16px;
+          overflow: hidden;
           box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
           opacity: 0;
           transform: translateY(-8px);
           pointer-events: none;
-          z-index: 41;
+          z-index: 2147483647;
           transition: opacity 0.2s ease, transform 0.2s ease;
         }
 
-        .framer-1i11eel-container.case-study-reading-preview:hover::after,
-        .framer-1i11eel-container.case-study-reading-preview:focus-within::after {
+        .case-study-reading-float img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .case-study-reading-float.is-visible {
           opacity: 1;
           transform: translateY(0);
         }
@@ -74,11 +75,51 @@
       document.head.appendChild(style);
     }
 
-    document
-      .querySelectorAll(".framer-1i11eel-container")
-      .forEach((container) => {
-        container.classList.add("case-study-reading-preview");
-      });
+    let preview = document.getElementById("case-study-reading-float");
+    if (!preview) {
+      preview = document.createElement("div");
+      preview.id = "case-study-reading-float";
+      preview.className = "case-study-reading-float";
+
+      const image = document.createElement("img");
+      image.src = "/our-dollar-your-problem.jpeg";
+      image.alt = "";
+      preview.appendChild(image);
+      document.body.appendChild(preview);
+    }
+
+    const positionPreview = (container) => {
+      const rect = container.getBoundingClientRect();
+      preview.style.top = `${rect.bottom + 12}px`;
+      preview.style.left = `${rect.right - 140}px`;
+    };
+
+    document.querySelectorAll(".framer-1i11eel-container").forEach((container) => {
+      if (!(container instanceof HTMLElement)) return;
+      if (container.dataset.readingPreviewBound === "true") return;
+
+      container.dataset.readingPreviewBound = "true";
+
+      const showPreview = () => {
+        positionPreview(container);
+        preview.classList.add("is-visible");
+      };
+
+      const hidePreview = () => {
+        preview.classList.remove("is-visible");
+      };
+
+      const movePreview = () => {
+        if (!preview.classList.contains("is-visible")) return;
+        positionPreview(container);
+      };
+
+      container.addEventListener("mouseenter", showPreview);
+      container.addEventListener("mousemove", movePreview);
+      container.addEventListener("mouseleave", hidePreview);
+      container.addEventListener("focusin", showPreview);
+      container.addEventListener("focusout", hidePreview);
+    });
   };
 
   document.addEventListener(
