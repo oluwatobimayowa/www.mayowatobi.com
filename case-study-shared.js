@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
-  var sidebar = document.querySelector(".w2-sidebar");
+  var sidebar = document.querySelector(".case-nav");
 
   if (!sidebar) {
     return;
   }
 
-  var activeTrigger = sidebar.querySelector(".w2-sidebar-btn.active");
+  var activeTrigger = sidebar.querySelector(".case-nav-btn.active");
 
   if (!activeTrigger) {
     return;
