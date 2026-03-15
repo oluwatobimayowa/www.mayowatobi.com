@@ -439,7 +439,7 @@
   min-width: 240px;
   background: #191719;
   border-radius: 16px;
-  padding-bottom: 24px;
+  padding-bottom: 8px;
   align-self: flex-start;
   position: sticky;
   top: 32px;
@@ -469,6 +469,7 @@
   flex-direction: column;
   gap: 5px;
   padding: 0 8px;
+  margin-bottom: 20px;
 }
 .case-nav-btn {
   display: flex;
@@ -801,7 +802,7 @@
 
 .concept-showcase-media video {
   width: 100%;
-  max-width: 320px;
+  max-width: 280px;
   height: auto;
   border-radius: 32px;
   box-shadow: 0 23px 20px 0 rgba(0, 0, 0, 0.25);
@@ -817,7 +818,6 @@
 
 .opportunity-header {
   margin-bottom: 48px;
-  padding-top: 24px;
 }
 
 .opportunity-header .section-chip {
@@ -1362,6 +1362,8 @@
     height: auto !important;
     min-height: 0 !important;
     padding: 32px 20px;
+    gap: 32px;
+    padding-bottom: 0px;
   }
 
   .concept-showcase-media {
@@ -1369,6 +1371,7 @@
     height: auto !important;
     min-height: 0 !important;
     padding: 24px 20px;
+    padding-bottom: 56px;
   }
 
   .concept-showcase-image {
@@ -1378,8 +1381,8 @@
   }
 
   .concept-showcase-title {
-    font-size: 40px;
-    line-height: 42px;
+    font-size: 36px;
+    line-height: 40px;
   }
 
   .opportunity-section {
@@ -1388,14 +1391,15 @@
   }
 
   .opportunity-title {
-    font-size: 46px;
-    line-height: 48px;
+    font-size: 36px;
+    line-height: 40px;
     overflow-wrap: break-word;
     word-wrap: break-word;
   }
 
   .opportunity-grid {
     flex-direction: column;
+    gap: 12px;
   }
 
   .opportunity-card {
@@ -1407,13 +1411,16 @@
     max-width: 100%;
   }
 
-  .comparison-header {
-    flex-direction: column;
-  }
-
   .comparison-body {
     gap: 24px;
     padding: 24px 20px;
+    padding-bottom: 32px;
+  }
+
+  .comparison-tab {
+    min-width: 0;
+    padding: 16px 12px;
+    gap: 8px;
   }
 
   .comparison-tab-label {
@@ -1421,11 +1428,11 @@
   }
 
   .comparison-tab-badge {
-    font-size: 12px;
+    display: none;
   }
 
   .comparison-visual {
-    padding: 24px 20px 0;
+    padding: 0px;
   }
 
   .comparison-footer {
@@ -1434,6 +1441,14 @@
 
   .comparison-section {
     border-radius: 16px;
+  }
+
+  .media-frame {
+    padding: 12px;
+  }
+
+  .media-frame img {
+    border-radius: 0;
   }
 
   .a11y-media-row {
@@ -1452,6 +1467,16 @@
 
   .a11y-media-card-media {
     padding: 24px 20px 0;
+  }
+
+  .metric-desc {
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.2px;
+  }
+
+  .portfolio-abstraction-info p {
+    font-size: 16px;
   }
 
   .a11y-media-card-narrow img {
@@ -1488,11 +1513,11 @@
   }
 
   .disclaimer-text {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .statement {
-    padding: 64px 20px;
+    padding: 32px 20px;
     overflow: hidden;
   }
 
@@ -1540,13 +1565,13 @@
     position: fixed !important;
     left: 20px !important;
     right: 20px !important;
-    bottom: 20px !important;
+    bottom: 0px !important;
     top: auto !important;
     width: auto !important;
     min-width: 0 !important;
     z-index: 1001 !important;
     padding: 12px !important;
-    border-radius: 20px !important;
+    border-radius: 20px 20px 0px 0px !important;
     background: rgba(17, 17, 17, 0.96) !important;
     box-shadow: 0 16px 48px rgba(0, 0, 0, 0.28);
     backdrop-filter: blur(16px);
@@ -1576,6 +1601,7 @@
   body.case-study-nav-ready .case-nav .case-nav-nav .case-nav-btn.active {
     display: flex !important;
     width: 100%;
+    background: none;
   }
 
   body.case-study-nav-ready .case-nav .case-nav-btn.active .case-nav-btn-subtitle {
@@ -1621,8 +1647,8 @@
   }
 
   body.case-study-nav-open .case-nav {
-    padding: 20px !important;
-    border-radius: 24px !important;
+    padding: 8px !important;
+    border-radius: 24px 24px 0px 0px !important;
   }
 
   body.case-study-nav-open .case-nav .case-nav-company {
