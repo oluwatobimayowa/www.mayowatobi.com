@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
+  var ENABLE_SCROLL_COLLAPSE = false;
   var sidebar = document.querySelector(".case-nav");
+  var scrollResetTimer = null;
 
   if (!sidebar) {
     return;
@@ -22,6 +24,10 @@ document.addEventListener("DOMContentLoaded", function () {
     return mobileQuery.matches;
   }
 
+  function setScrollingState(isScrolling) {
+    document.body.classList.toggle("case-study-nav-scrolling", isScrolling);
+  }
+
   function closeNav() {
     sidebar.classList.remove("is-open");
     document.body.classList.remove("case-study-nav-open");
@@ -33,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
+    setScrollingState(false);
     sidebar.classList.add("is-open");
     document.body.classList.add("case-study-nav-open");
     activeTrigger.setAttribute("aria-expanded", "true");
@@ -46,10 +53,31 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
+    setScrollingState(false);
     closeNav();
     document.body.classList.remove("case-study-nav-ready");
     activeTrigger.removeAttribute("aria-haspopup");
     activeTrigger.removeAttribute("aria-expanded");
+  }
+
+  function handleScroll() {
+    if (!ENABLE_SCROLL_COLLAPSE) {
+      return;
+    }
+
+    if (!isMobile() || sidebar.classList.contains("is-open")) {
+      return;
+    }
+
+    setScrollingState(true);
+
+    if (scrollResetTimer) {
+      window.clearTimeout(scrollResetTimer);
+    }
+
+    scrollResetTimer = window.setTimeout(function () {
+      setScrollingState(false);
+    }, 180);
   }
 
   activeTrigger.addEventListener("click", function (event) {
@@ -75,6 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  window.addEventListener("scroll", handleScroll, { passive: true });
   mobileQuery.addEventListener("change", syncMode);
   syncMode();
 });

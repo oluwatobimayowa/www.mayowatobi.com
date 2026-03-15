@@ -667,6 +667,36 @@
     transform: rotate(90deg);
   }
 
+  body.case-study-nav-ready.case-study-nav-scrolling .case-nav {
+    left: auto !important;
+    right: 20px !important;
+    width: 56px !important;
+    min-width: 56px !important;
+    padding: 8px !important;
+    border-radius: 999px !important;
+    gap: 0 !important;
+    overflow: hidden;
+  }
+
+  body.case-study-nav-ready.case-study-nav-scrolling .case-nav .case-nav-nav {
+    gap: 0 !important;
+  }
+
+  body.case-study-nav-ready.case-study-nav-scrolling .case-nav .case-nav-nav .case-nav-btn.active {
+    justify-content: center;
+    padding: 10px !important;
+  }
+
+  body.case-study-nav-ready.case-study-nav-scrolling .case-nav .case-nav-btn-content,
+  body.case-study-nav-ready.case-study-nav-scrolling .case-nav .case-nav-btn-subtitle {
+    display: none !important;
+  }
+
+  body.case-study-nav-ready.case-study-nav-scrolling .case-nav .case-nav-btn-arrow {
+    margin: 0;
+    transform: rotate(90deg);
+  }
+
   body.case-study-nav-open {
     overflow: hidden;
   }
