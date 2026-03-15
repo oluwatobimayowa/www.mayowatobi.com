@@ -595,18 +595,32 @@
   justify-content: space-between;
 }
 .w2-hero-counter {
+  display: flex;
+  align-items: center;
+  gap: 20px;
   font-size: 92px;
   color: #f4e9e1;
   letter-spacing: -0.99px;
   line-height: 99px;
 }
 .w2-hero-counter .w2-dashes {
-  letter-spacing: -11px;
+  display: block;
+  flex: 1;
+  min-width: 140px;
+  height: 2px;
+  background: currentColor;
+  font-size: 0;
+  letter-spacing: 0;
 }
 .w2-hero-logo {
-  height: 48px;
+  width: 218px;
+  flex-shrink: 0;
 }
-.w2-hero-logo img { height: 100%; }
+.w2-hero-logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 .w2-hero-title {
   font-size: 180px;
   color: #f4e9e1;
@@ -644,12 +658,12 @@
 }
 
 /* Card with text (first card in row) */
-.w3-card-text .w2-card-heading {
+.card-text .w2-card-heading {
   font-weight: 500;
   font-size: 46px;
   line-height: 46px;
 }
-.w3-card-text .w2-card-rating {
+.card-text .w2-card-rating {
   font-size: 39px;
   letter-spacing: -1.19px;
   line-height: 44px;
@@ -862,15 +876,130 @@
   .w2-challenge-body { font-size: 52px; line-height: 56px; min-height: auto; }
   .w2-challenge-inner { flex-direction: column; gap: 24px; }
   .w2-challenge-label { width: auto; padding-top: 0; }
-  .card-row { flex-direction: column; }
+  .card-row { flex-direction: column; gap: 32px; }
   .w2-card { height: auto; min-height: 500px; }
   .w2-brand-row { flex-direction: column; height: auto; }
   .w2-tabs-video { height: 400px; }
 }
 @media (max-width: 600px) {
-  .w2-hero-title { font-size: 48px; line-height: 52px; }
-  .w2-challenge-body { font-size: 36px; line-height: 40px; }
-  .w3-card-text .w2-card-heading { font-size: 28px; line-height: 30px; }
+  .w2-page {
+    padding: 20px 20px 112px;
+  }
+
+  .w2-main {
+    gap: 12px;
+  }
+
+  .w2-hero {
+    min-height: 0;
+    padding: 32px 20px;
+    gap: 40px;
+  }
+
+  .w2-hero-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .w2-hero-counter {
+    width: 100%;
+    font-size: 56px;
+    line-height: 60px;
+    gap: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .w2-hero-counter .w2-dashes {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .w2-hero-logo {
+    width: min(100%, 150px);
+  }
+
+  .w2-hero-logo img {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .w2-hero-title {
+    font-size: 48px;
+    line-height: 52px;
+  }
+
+  .w2-card {
+    min-height: 400px;
+    padding: 20px;
+  }
+
+  .w2-card-phone {
+    width: min(100%, 220px) !important;
+    height: auto !important;
+    aspect-ratio: 262 / 568;
+  }
+
+  .w2-media-section,
+  .w2-challenge {
+    padding: 32px 20px;
+  }
+
+  .w2-challenge-body {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  .w2-tabs-section {
+    border: none;
+  }
+
+  .w2-tabs-header {
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px 8px 0;
+  }
+
+  .w2-tab {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 12px;
+  }
+
+  .w2-tabs-body {
+    padding: 20px;
+  }
+
+  .w2-tabs-video {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 268 / 400;
+    border-radius: 24px;
+  }
+
+  .w2-tabs-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 0 20px 20px;
+  }
+
+  .w2-tabs-footer-meta {
+    display: inline-block;
+  }
+
+  .card-text .w2-card-heading {
+    font-size: 28px;
+    line-height: 30px;
+  }
+
+  .w2-brand-rating-desc {
+    font-size: 16px;
+    line-height: 20px;
+  }
 }
 </style>
 
@@ -974,9 +1103,13 @@
     <!-- HERO -->
     <div class="w2-hero">
       <div class="w2-hero-header">
-        <div class="w2-hero-counter">0<span class="w2-dashes">———————</span> 1</div>
+        <div class="w2-hero-counter">
+          <span class="w2-hero-counter-start">0</span>
+          <span class="w2-dashes" aria-hidden="true"></span>
+          <span class="w2-hero-counter-end">1</span>
+        </div>
         <div class="w2-hero-logo" style="--fill-0: #f4e9e1;">
-          <img src="f6d7246831f504317d882ab92d98a7ac33a17f1c.svg" alt="Busha logo" style="height:48px; width:auto;">
+          <img src="f6d7246831f504317d882ab92d98a7ac33a17f1c.svg" alt="Busha logo">
         </div>
       </div>
       <div class="w2-hero-title">Founding designer</div>
@@ -984,7 +1117,7 @@
 
     <!-- 3-CARD ROW: text card + video card + phone card -->
     <div class="card-row">
-      <div class="w3-card-text w3-card-text--ink">
+      <div class="card-text card-text--ink">
         <div>
           <div class="w2-card-heading">
             Scaling design at a crypto in a low-trust market:
@@ -1110,7 +1243,7 @@
       <div class="w2-card w2-card-green" style="flex:0 0 428px; padding:0; overflow:hidden;">
         <img src="453a446997a85ec2601cfe3a083392c1bc7fb725.png" alt="The better side of money" style="width:100%; height:100%; object-fit:cover;">
       </div>
-      <div class="w3-card-text w3-card-text--ink">
+      <div class="card-text card-text--ink">
         <div class="w2-card-rating">4.5★</div>
         <div class="w2-brand-rating-desc">
           Apple App Store and<br>Google Play reviews

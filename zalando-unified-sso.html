@@ -902,7 +902,7 @@
   .w2-challenge-body { font-size: 52px; line-height: 56px; min-height: auto; }
   .w2-challenge-inner { flex-direction: column; gap: 24px; }
   .w2-challenge-label { width: auto; padding-top: 0; }
-  .card-row { flex-direction: column; }
+  .card-row { flex-direction: column; gap: 32px; overflow: visible; }
   .w2-card { height: auto; min-height: auto; }
   .w2-brand-row { flex-direction: column; height: auto; }
   .w2-tabs-video { height: 400px; }
@@ -1007,7 +1007,7 @@
   gap: 16px;
 }
 
-.w3-card {
+.card {
   flex: 1 0 0;
   min-width: 0;
   height: 720px;
@@ -1015,14 +1015,14 @@
   overflow: hidden;
   position: relative;
 }
-.w3-card-warm { background: #fff1ea; }
+.card--warm { background: #fff1ea; }
 
-.w3-card-text .w3-card-heading {
+.card-text .card-heading {
   font-weight: 500;
   font-size: 46px;
   line-height: 48px;
 }
-.w3-card-rating {
+.card-rating {
   font-weight: 500;
   font-size: 39px;
   letter-spacing: -1.19px;
@@ -1030,55 +1030,55 @@
 }
 
 /* Phone card */
-.w3-card-phones {
+.card--phones {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 32px;
 }
-.w3-phone-stack {
+.phone-stack {
   position: relative;
   width: 320px;
   height: 660px;
 }
-.w3-phone-back {
+.phone-back {
   width: 100%;
   height: 100%;
   border-radius: 40px;
   overflow: hidden;
 }
-.w3-phone-back img {
+.phone-back img {
   width: 100%; height: 100%;
   object-fit: cover;
 }
-.w3-phone-front {
+.phone-front {
   display: none;
 }
 
 /* Purple phone card */
-.w3-card-purple-phone {
+.card--purple-phone {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 32px;
 }
-.w3-purple-stack {
+.purple-stack {
   position: relative;
   width: 320px;
   height: 660px;
 }
-.w3-purple-inner {
+.purple-inner {
   width: 100%;
   height: 100%;
   border-radius: 40px;
   overflow: hidden;
   background: #4a0efd;
 }
-.w3-purple-inner img {
+.purple-inner img {
   width: 100%; height: 100%;
   object-fit: cover;
 }
-.w3-purple-frame {
+.purple-frame {
   display: none;
 }
 
@@ -1403,8 +1403,17 @@
   .w3-challenge-body { font-size: 52px; line-height: 56px; min-height: auto; }
   .w3-challenge-inner { flex-direction: column; gap: 24px; }
   .w3-challenge-label { width: auto; padding-top: 0; }
-  .card-row { flex-direction: column; }
-  .w3-card { height: auto !important; min-height: 0 !important; }
+  .card-row { flex-direction: column; gap: 32px; overflow: visible; }
+  .card,
+  .card-text {
+    flex: none;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+  .card--phones, .card--purple-phone { padding: 24px; }
+  .phone-stack, .purple-stack { width: 100%; height: auto; }
+  .phone-back { width: 100%; height: auto; aspect-ratio: 9/19; }
+  .purple-inner { width: 100%; height: auto; aspect-ratio: 9/19; }
   .metric-row { flex-direction: column; }
   .metric-card { height: auto !important; min-height: 0 !important; }
   .w3-image-row { flex-direction: column; gap: 24px; }
@@ -1452,12 +1461,20 @@
   .w3-challenge-body { font-size: 46px; line-height: 48px; min-height: 0 !important; overflow-wrap: break-word; word-wrap: break-word; }
   .w3-challenge-inner { flex-direction: column; gap: 24px; }
   .w3-challenge-label { width: auto; padding-top: 0; }
-  .card-row { flex-direction: column; }
-  .w3-card { height: auto !important; min-height: 0 !important; }
-  .w3-phone-stack { width: 280px; height: auto; }
-  .w3-phone-back { width: 100%; height: auto; aspect-ratio: 9/19; }
-  .w3-purple-stack { width: 280px; height: auto; }
-  .w3-purple-inner { width: 100%; height: auto; aspect-ratio: 9/19; }
+  .card-row { flex-direction: column; gap: 32px; overflow: visible; }
+  .card,
+  .card-text {
+    flex: none;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+  .card--phones, .card--purple-phone {
+    padding: 20px;
+    overflow: visible;
+  }
+  .phone-stack, .purple-stack { width: 100%; max-width: 320px; height: auto; }
+  .phone-back { width: 100%; height: auto; aspect-ratio: 9/19; }
+  .purple-inner { width: 100%; height: auto; aspect-ratio: 9/19; }
   .metric-row { flex-direction: column; }
   .metric-card { height: auto !important; min-height: 0 !important; }
   .metric-value { font-size: 80px; }
@@ -1476,7 +1493,7 @@
 }
 @media (max-width: 600px) {
   .w3-challenge-body { font-size: 36px; line-height: 40px; }
-  .w3-card-text .w3-card-heading { font-size: 28px; line-height: 30px; }
+  .card-text .card-heading { font-size: 28px; line-height: 30px; }
   .w3-systems-title { font-size: 36px; line-height: 40px; }
   .w3-impact-title { font-size: 36px; line-height: 40px; }
 }
@@ -1543,32 +1560,32 @@
     <!-- 3-CARD ROW -->
     <div class="card-row">
       <!-- Card 1: Text -->
-      <div class="w3-card-text w3-card-text--ink">
+      <div class="card-text card-text--ink">
         <div>
-          <div class="w3-card-heading">Reducing friction, boosting security, and increasing registration <span class="w3-card-heading-muted">by 17.8%</span></div>
+          <div class="card-heading">Reducing friction, boosting security, and increasing registration <span class="card-heading-muted">by 17.8%</span></div>
         </div>
-        <div class="w3-card-rating">4.5★</div>
+        <div class="card-rating">4.5★</div>
       </div>
 
       <!-- Card 2: Phone mockups (Zalando) -->
-      <div class="w3-card w3-card-warm w3-card-phones">
-        <div class="w3-phone-stack">
-          <div class="w3-phone-back">
+      <div class="card card--warm card--phones">
+        <div class="phone-stack">
+          <div class="phone-back">
             <img src="76c4b273e1a7bba2d645bb7aeb51c54a934d3b9f.png" alt="Zalando SSO screen">
           </div>
-          <div class="w3-phone-front">
+          <div class="phone-front">
             <img src="494ae7938f3fa7f7b806caad0e878f1b0dc4bbe8.png" alt="Phone frame">
           </div>
         </div>
       </div>
 
       <!-- Card 3: Purple phone (Lounge) -->
-      <div class="w3-card w3-card-warm w3-card-purple-phone">
-        <div class="w3-purple-stack">
-          <div class="w3-purple-inner">
+      <div class="card card--warm card--purple-phone">
+        <div class="purple-stack">
+          <div class="purple-inner">
             <img src="a5268114553839fbb162239b6fb2878ae4d8dfa8.png" alt="Lounge SSO screen">
           </div>
-          <div class="w3-purple-frame">
+          <div class="purple-frame">
             <img src="494ae7938f3fa7f7b806caad0e878f1b0dc4bbe8.png" alt="Phone frame">
           </div>
         </div>
